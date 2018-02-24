@@ -1,0 +1,17 @@
+/******************************************************************************
+ * Magnifier Control
+ * @author : SaiPradeepDandem
+ * 
+ ******************************************************************************/
+.magnifier{
+	-fx-skin: "com.only.fx.common.component.skin.MagnifierSkin";
+}
+
+.magnifier-frame{
+	-fx-fill: radial-gradient(focus-angle 0deg , focus-distance 0% , center 50% 50% , radius 50% , #f0f8ff 93% , #696969 94% , #FaFaFa 97% , #808080);
+}
+
+.magnifier-vLine, .magnifier-hLine{
+	-fx-stroke : red;
+	-fx-opacity : .5;
+}

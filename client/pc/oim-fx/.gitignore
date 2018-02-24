@@ -1,0 +1,46 @@
+*.class
+*.log
+/bin
+/logs
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+
+# Eclipse #
+.classpath
+.project
+.externalToolBuilders/
+.metadata
+.settings
+.myeclipse
+
+
+# Maven #
+/target/
+
+
+# IntelliJ #
+*.iml
+*.ipr
+*.iws
+.idea
+/out/
+
+
+# NetBeans #
+nbproject
+build
+build.xml
+manifest.mf
+
+# Mac #
+.DS_Store
+._*
+
+# OIM #
+/Config/
+/DB/
+/Temp/*

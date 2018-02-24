@@ -1,0 +1,238 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.only</groupId>
+    <artifactId>oim-server-common</artifactId>
+    <version>1.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>oim-server-common</name>
+    <url>https://gitee.com/onlysoftware/oim-server-common</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.7</jdk.version>
+        <org.springframework.version>4.2.6.RELEASE</org.springframework.version>
+        <hibernate.version>5.0.5.Final</hibernate.version>
+        <jackson.version>2.6.3</jackson.version>
+    </properties>
+
+	<repositories>
+		<repository>
+			<id>com.only</id>
+			<url>https://raw.githubusercontent.com/onlyxiahui/maven/master/repository</url>
+		</repository>
+	</repositories>
+	
+    <dependencies>
+        <!-- only start -->
+        <dependency>
+            <groupId>com.only</groupId>
+		    <artifactId>only-common</artifactId>
+		    <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.only</groupId>
+            <artifactId>only-query-hibernate</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <!-- only end -->
+        
+        <!-- hibernate start -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.2.2.Final</version>
+        </dependency>
+        <!-- hibernate end -->
+	
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.37</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.26</version>
+        </dependency>
+        <!-- <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>2.10.1</version>
+        </dependency> -->
+        <!-- servlet3.0核心包 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.2-b01</version>
+        </dependency>
+        <!-- jstl -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.13</version>
+        </dependency>
+       
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.8.3</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.flexjson</groupId>
+            <artifactId>flexjson</artifactId>
+            <version>3.3</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.23</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.2.Final</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>2.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>1.1</version>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <finalName>oim-server-common</finalName>
+        <plugins>
+			
+			<!-- clean插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+            
+            <!-- 忽略 junit测试 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            
+            <!-- compiler插件, 设定JDK版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>UTF8</encoding>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+            
+            <!-- resource插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+			</plugin>
+
+			<!-- source插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase><!-- 要绑定到的生命周期的阶段 在verify之后，install之前执行下面指定的goal -->
+						<goals>
+							<goal>jar-no-fork</goal><!-- 类似执行mvn source:jar -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<!-- install插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+			</plugin>
+
+			<!-- dependency插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.0.2</version>
+			</plugin>
+			
+        </plugins>
+    </build>
+</project>

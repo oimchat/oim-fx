@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>  
+    <id>bin</id>  
+    <!-- 最终打包成一个用于发布的zip文件 -->  
+    <formats>  
+        <format>zip</format>  
+    </formats>  
+  
+    <!-- Adds dependencies to zip package under lib directory -->  
+    <dependencySets>  
+        <dependencySet>  
+            <!-- 不使用项目的artifact，第三方jar不要解压，打包进zip文件的lib目录 -->  
+            <useProjectArtifact>false</useProjectArtifact>  
+            <outputDirectory>lib</outputDirectory>  
+            <unpack>false</unpack>  
+        </dependencySet>  
+    </dependencySets>  
+  
+    <fileSets>  
+        <!-- 把项目相关的说明文件，打包进zip文件的根目录 -->  
+        <fileSet>  
+            <directory>${project.basedir}</directory>  
+            <outputDirectory>/</outputDirectory>  
+            <includes>  
+                <include>README*</include>  
+                <include>LICENSE*</include>  
+                <include>NOTICE*</include>  
+            </includes>  
+        </fileSet>  
+          
+        <!-- 把项目的配置文件，打包进zip文件的config目录 
+        <fileSet>  
+            <directory>${project.basedir}\src\main\resources</directory>
+            <directory>${project.basedir}\Resources</directory>
+            <outputDirectory>Resources</outputDirectory>
+            <includes>  
+                <include>*.xml</include>  
+                <include>*.properties</include>  
+            </includes> 
+        </fileSet>
+        -->
+        <fileSet>  
+            <directory>${project.basedir}\Config</directory>
+            <outputDirectory>Config</outputDirectory>
+        </fileSet>
+        <fileSet>  
+            <directory>${project.basedir}\db</directory>
+            <outputDirectory>db</outputDirectory>
+        </fileSet>  
+          
+        <!-- 把项目的脚本文件目录（ src/main/scripts ）中的启动脚本文件，打包进zip文件的跟目录 -->  
+        <fileSet>  
+            <directory>${project.build.scriptSourceDirectory}</directory>  
+            <outputDirectory></outputDirectory>  
+            <includes>  
+                <include>startup.*</include>  
+            </includes>  
+        </fileSet>  
+  
+        <!-- 把项目的脚本文件（除了启动脚本文件），打包进zip文件的script目录 -->  
+<!--        <fileSet>  
+            <directory>${project.build.scriptSourceDirectory}</directory>  
+            <outputDirectory></outputDirectory>  
+            <includes>  
+                <exclude>startup.*</exclude>  
+            </includes>  
+        </fileSet>  -->
+          
+        <!-- 把项目自己编译出来的jar文件，打包进zip文件的根目录 -->  
+        <fileSet>  
+            <directory>${project.build.directory}</directory>  
+            <outputDirectory></outputDirectory>  
+            <includes>  
+                <include>*.jar</include>  
+            </includes>  
+        </fileSet>  
+    </fileSets>  
+</assembly> 

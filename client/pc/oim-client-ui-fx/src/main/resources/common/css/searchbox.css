@@ -1,0 +1,30 @@
+.search-box {
+    -fx-background-color: white;
+    -fx-background-insets: 1;
+    -fx-background-radius: 3;
+}
+
+.search-box .text-field {
+    -fx-background-color: white;
+    -fx-background-insets: 1;
+    -fx-background-radius: 3;
+    
+
+    -fx-font-size: 13px;
+    -fx-prompt-text-fill: grey;
+}
+
+.search-box .text-field:focused {
+    -fx-background-color: -fx-focus-color, white;
+    -fx-background-insets: 1;
+    -fx-background-radius: 3;
+}
+
+.search-box .button {
+    -fx-background-color: null;
+    -fx-background-image: url("../images/searchbox/search_clear_hover.png");
+}
+
+.search-box .button:hover {
+    -fx-background-image: url("../images/searchbox/search_clear_hover.png");
+}

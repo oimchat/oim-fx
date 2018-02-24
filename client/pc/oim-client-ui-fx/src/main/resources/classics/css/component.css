@@ -1,0 +1,167 @@
+/******************************************************************************
+ *                                                                            *
+ * ChoosePane                                                                 *
+ *                                                                            *
+ ******************************************************************************/
+.choose-pane {
+	-fx-background-color: null;
+}
+
+.choose-pane:hover {
+	-fx-background-color: rgba(160, 160, 160, 0.3);
+}
+
+.choose-pane:pressed {
+	-fx-background-color: rgba(110, 110, 110, 0.3);
+}
+
+.choose-pane:focused {
+	-fx-background-color: rgba(110, 110, 110, 0.3);
+}
+
+.choose-pane:selected {
+	-fx-background-color: rgba(160, 160, 160, 0.3);
+}
+
+/******************************************************************************
+ * icon-button                                                                *
+ ******************************************************************************/
+.icon-button, .icon-menu-button, .icon-pane {
+	-fx-background-color: null;
+	-fx-background-radius: 1;
+	-fx-font-family: "微软雅黑";
+	-fx-text-fill: white;
+	-fx-font-size: 12;
+}
+
+.icon-button:focused, .icon-menu-button:focused, .icon-pane:focused {
+	-fx-background-color: rgba(153, 153, 153, 0.5);
+	-fx-background-radius: 1;
+}
+
+.icon-button:hover, .icon-menu-button:hover, .icon-pane:hover {
+	-fx-background-color: rgba(160, 160, 160, 0.5);
+	-fx-background-radius: 1;
+}
+
+.icon-button:pressed, .icon-menu-button:pressed, .icon-pane:pressed {
+	-fx-background-color: rgba(120, 120, 120, 0.5);
+	-fx-background-radius: 1;
+}
+
+/******************************************************************************
+ *                                                                            *
+ *chat-item                                                                   *
+ *                                                                            *
+ ******************************************************************************/
+.chat-item {
+	-fx-background-color: null;
+}
+
+.chat-item:hover {
+	-fx-background-color: rgba(255, 255, 255, 0.5);
+}
+
+.chat-item:pressed {
+	-fx-background-color: rgba(255, 255, 255, 0.6);
+}
+
+.chat-item:focused {
+	-fx-background-color: rgba(255, 255, 255, 0.3);
+}
+
+.chat-item:selected {
+	-fx-background-color: rgba(255, 255, 255, 0.3);
+}
+
+/******************************************************************************
+ *                                                                            *
+ * Head                                                                       *
+ *                                                                            *
+ ******************************************************************************/
+.head-common-image-pane {
+	-fx-background-color: null;
+}
+
+.head-common-image-pane:hover {
+	-fx-effect: dropshadow(three-pass-box, rgba(45, 183, 239, 1), 10, 0.7, 0,
+		0);
+}
+
+.head-common-image-pane:focused {
+	-fx-effect: dropshadow(three-pass-box, -fx-focus-color, 5, 0.7, 0, 0);
+}
+
+/******************************************************************************
+ *                                                                            *
+ *list-pane                                                                 *
+ *                                                                            *
+ ******************************************************************************/
+.list-top-title {
+	-fx-background-color: null;
+}
+
+.list-top-title:hover {
+	-fx-background-color: rgba(255, 255, 255, 0.7);
+}
+
+/*******************************************************************************                                                                          *
+ * find-add-button                                                             *                                                                           *
+ ******************************************************************************/
+.find-add-button {
+	-fx-background-color: #85c7eb;
+	-fx-background-radius: 3;
+	-fx-font-family: "微软雅黑";
+	-fx-text-fill: white;
+	-fx-font-size: 12;
+}
+
+.find-add-button:focused {
+	-fx-background-color: #85c7eb;
+	-fx-background-radius: 3;
+}
+
+.find-add-button:hover {
+	-fx-background-color: #228dce;
+	-fx-background-radius: 3;
+}
+
+.find-add-button:pressed {
+	-fx-background-color: #228dce;
+	-fx-background-radius: 3;
+}
+
+.find-add-button>.find-add-icon {
+	-fx-background-image: url("../images/find/add/3_add_normal.png");
+}
+
+.find-add-button:focused>.find-add-icon {
+	-fx-background-image: url("../images/find/add/3_add_hover.png");
+}
+
+.find-add-button:hover>.find-add-icon {
+	-fx-background-image: url("../images/find/add/3_add_hover.png");
+}
+
+
+
+
+.find-add-button:pressed>.find-add-icon {
+	-fx-background-image: url("../images/find/add/3_add_down.png");
+}
+
+.close-button-square-9>.image-view {
+	-fx-image: url("../images/common/close/square_9_close_normal.png");
+}
+
+.close-button-square-9:focused.image-view {
+	-fx-image: url("../images/common/close/square_9_close_down.png");
+}
+
+.close-button-square-9:hover .image-view {
+	-fx-image: url("../images/common/close/square_9_close_hover.png");
+}
+
+.close-button-square-9:pressed .image-view {
+	-fx-image: url("../images/common/close/square_9_close_down.png");
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+	<space name="roomChat">
+		<query name="queryRoomChatContentList" type="sql">
+			<resultList>
+				<result column="id" type="string" />
+				<result column="messageId" type="string" />
+				<result column="roomId" type="string" />
+				<result column="roomName" type="string" />
+				<result column="userId" type="string" />
+				<result column="userHead" type="string" />
+				<result column="userRole" type="string" />
+				<result column="userName" type="string" />
+				<result column="userNickname" type="string" />
+				<result column="userRemark" type="string" />
+				<result column="isDeleted" type="string" />
+				<result column="isSend" type="string" />
+				<result column="time" type="timestamp" />
+				<result column="timestamp" type="long" />
+			</resultList>
+			<content>
+                <![CDATA[
+					select 
+						rcc.id,
+						rcc.messageId,
+						rcc.roomId,
+						rcc.roomName,
+						rcc.userId,
+						rcc.userHead,
+						rcc.userRole,
+						rcc.userName,
+						rcc.userNickname,
+						rcc.userRemark,
+						rcc.isDeleted,
+						rcc.isSend,
+						rcc.time,
+						rcc.timestamp
+                    from im_room_chat_content rcc
+                    where 1=1
+                    
+                    <#if roomId?? >
+                    	and rcc.roomId = :roomId
+                    </#if>
+                    
+                    <#if userId?? >
+                    	and rcc.userId = :userId
+                    </#if>
+                    
+                    <#if userRole?? >
+                    	and rcc.userRole = :userRole
+                    </#if>
+                    
+                    <#if userNickname?? >
+                    	and rcc.userNickname like :userNickname
+                    </#if>
+                    
+                    <#if startDate?? >
+                    	and rcc.time >= :startDate
+                    </#if>
+                    
+                    <#if endDate?? >
+                    	and rcc.time <= :endDate
+                    </#if>
+                    
+                    <#if text?? && ''!=text>
+                    	and exists
+                    	(   
+	                    	select rci.messageId 
+	                    	from im_room_chat_item rci
+	                    	where 
+	                    	rci.roomChatContentId = rcc.id
+	                    	and rci.value like :text
+                    	)
+                    </#if>
+                    
+                    order by rcc.`timestamp` desc
+                ]]>
+			</content>
+		</query>
+	
+		<query name="queryRoomChatItemList" type="sql">
+			<resultList>
+				<result column="id" type="string" />
+				<result column="roomChatContentId" type="string" />
+				<result column="messageId" type="string" />
+				<result column="roomId" type="string" />
+				<result column="userId" type="string" />
+				<result column="type" type="string" />
+				<result column="value" type="string" />
+				<result column="filterValue" type="string" />
+				<result column="rank" type="integer" />
+				<result column="section" type="integer" />
+			</resultList>
+			<content>
+                <![CDATA[
+					select 
+						rci.id,
+						rci.roomChatContentId,
+						rci.messageId,
+						rci.roomId,
+						rci.userId,
+						rci.type,
+						rci.value,
+						rci.filterValue,
+						rci.rank,
+						rci.section
+						
+                    from im_room_chat_item rci
+                    where 1=1
+                    
+                    <#if messageIds?? >
+                    	and rci.messageId in( :messageIds )
+                    </#if>
+                    
+                    <#if roomChatContentIds?? >
+                    	and rci.roomChatContentId in( :roomChatContentIds )
+                    </#if>
+                    
+                    <#if text?? && ''!=text>
+                    	and rci.value like :text
+                    </#if>
+                    
+                    order by  rci.section, rci.rank
+                ]]>
+			</content>
+		</query>
+	</space>
+</body>

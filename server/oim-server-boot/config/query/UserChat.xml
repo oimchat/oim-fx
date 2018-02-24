@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+	<space name="userChat">
+		<query name="getUserChatContentByMessageId" type="sql">
+			<resultList>
+				<result column="id" type="string" />
+				<result column="messageId" type="string" />
+				
+				<result column="receiveUserId" type="string" />
+				<result column="receiveUserHead" type="string" />
+				<result column="receiveUserRole" type="string" />
+				<result column="receiveUserName" type="string" />
+				<result column="receiveUserNickname" type="string" />
+				
+				<result column="sendUserId" type="string" />
+				<result column="sendUserHead" type="string" />
+				<result column="sendUserRole" type="string" />
+				<result column="sendUserName" type="string" />
+				<result column="sendUserNickname" type="string" />
+				<result column="sendUserRemark" type="string" />
+				
+				<result column="isDeleted" type="string" />
+				<result column="isSend" type="string" />
+				<result column="time" type="timestamp" />
+				<result column="timestamp" type="long" />
+			</resultList>
+			<content>
+                <![CDATA[
+	
+					select 
+					 	ucc.id,
+						ucc.messageId,
+
+						ucc.receiveUserId,
+						ucc.receiveUserHead,
+						ucc.receiveUserRole,
+						ucc.receiveUserName,
+						ucc.receiveUserNickname,
+					
+						ucc.sendUserId,
+						ucc.sendUserHead,
+						ucc.sendUserRole,
+						ucc.sendUserName,
+						ucc.sendUserNickname,
+						ucc.sendUserRemark,
+					
+						ucc.isDeleted,
+						ucc.isSend,
+						ucc.time,
+						ucc.timestamp
+						
+                    from im_user_chat_content ucc
+                    where  
+                    
+					ucc.messageId = :messageId 
+					
+					<#if chatReceiveUserId?? && ''!=chatReceiveUserId >
+                    	and( ucc.chatReceiveUserId = :receiveUserId or ucc.sendUserId = :chatReceiveUserId )
+                    </#if>
+                    
+                    <#if chatSendUserId?? && ''!=chatSendUserId >
+                    	and( ucc.sendUserId = :chatSendUserId or ucc.receiveUserId = :chatSendUserId )
+                    </#if>
+                    
+					limit 0,1
+                ]]>
+			</content>
+		</query>
+		
+		<query name="queryUserChatContentList" type="sql">
+			<resultList>
+				<result column="id" type="string" />
+				<result column="messageId" type="string" />
+				
+				<result column="receiveUserId" type="string" />
+				<result column="receiveUserHead" type="string" />
+				<result column="receiveUserRole" type="string" />
+				<result column="receiveUserName" type="string" />
+				<result column="receiveUserNickname" type="string" />
+				
+				<result column="sendUserId" type="string" />
+				<result column="sendUserHead" type="string" />
+				<result column="sendUserRole" type="string" />
+				<result column="sendUserName" type="string" />
+				<result column="sendUserNickname" type="string" />
+				<result column="sendUserRemark" type="string" />
+				
+				<result column="isDeleted" type="string" />
+				<result column="isSend" type="string" />
+				<result column="time" type="timestamp" />
+				<result column="timestamp" type="long" />
+			</resultList>
+			<content>
+                <![CDATA[
+	
+					select 
+					 	ucc.id,
+						ucc.messageId,
+
+						ucc.receiveUserId,
+						ucc.receiveUserHead,
+						ucc.receiveUserRole,
+						ucc.receiveUserName,
+						ucc.receiveUserNickname,
+					
+						ucc.sendUserId,
+						ucc.sendUserHead,
+						ucc.sendUserRole,
+						ucc.sendUserName,
+						ucc.sendUserNickname,
+						ucc.sendUserRemark,
+					
+						ucc.isDeleted,
+						ucc.isSend,
+						ucc.time,
+						ucc.timestamp
+						
+                    from 
+                    (
+                    
+						select ucca.* 
+						from im_user_chat_content ucca 
+						where 1=1 
+	                    <#if chatReceiveUserId?? && ''!=chatReceiveUserId >
+	                    	and ucca.receiveUserId = :chatReceiveUserId
+	                    </#if>
+	                    <#if chatSendUserId?? && ''!=chatSendUserId >
+	                    	and ucca.sendUserId = :chatSendUserId 
+	                    </#if>
+						union  
+						select uccb.* 
+						from im_user_chat_content uccb
+						where 1=1 
+						<#if chatReceiveUserId?? && ''!=chatReceiveUserId >
+							and uccb.sendUserId = :chatReceiveUserId
+	                    </#if>
+	                    <#if chatSendUserId?? && ''!=chatSendUserId >
+	                    	and uccb.receiveUserId = :chatSendUserId 
+	                    </#if>
+                    
+                    ) ucc
+                    where 1=1
+                    
+                    <#if receiveUserId?? >
+                    	and ucc.receiveUserId = :receiveUserId
+                    </#if>
+                    
+                    <#if sendUserId?? >
+                    	and ucc.sendUserId = :sendUserId
+                    </#if>
+
+                    <#if outId?? >
+                    	and ucc.id != :outId
+                    </#if>
+                    
+                    <#if outMessageId?? >
+                    	and ucc.messageId != :outMessageId
+                    </#if>
+                    
+                    <#if timestamp?? && 0!=timestamp >
+						and ucc.timestamp ${compare} :timestamp
+                    </#if>
+                    
+                    <#if chatReceiveUserId?? && ''!=chatReceiveUserId >
+                    	and( ucc.receiveUserId = :chatReceiveUserId or ucc.sendUserId = :chatReceiveUserId )
+                    </#if>
+                    
+                    <#if chatSendUserId?? && ''!=chatSendUserId >
+                    	and( ucc.sendUserId = :chatSendUserId or ucc.receiveUserId = :chatSendUserId )
+                    </#if>
+			
+					<#if startDate?? >
+                    	and ucc.time >= :startDate
+                    </#if>
+                    
+                    <#if endDate?? >
+                    	and ucc.time <= :endDate
+                    </#if>
+                    
+                    <#if text?? && ''!=text>
+                    	and exists
+                    	(   
+	                    	select uci.userChatContentId 
+	                    	from im_user_chat_item uci
+	                    	where 
+	                    	uci.userChatContentId = ucc.id
+	                    	and uci.value like :text
+                    	)
+                    </#if>
+                    
+                    order by ucc.timestamp desc
+                ]]>
+			</content>
+		</query>
+	
+		<query name="getUserChatItemList" type="sql">
+			<resultList>
+				<result column="id" type="string" />
+				<result column="userChatContentId" type="string" />
+				<result column="messageId" type="string" />
+				<result column="receiveUserId" type="string" />
+				<result column="sendUserId" type="string" />
+				<result column="type" type="string" />
+				<result column="value" type="string" />
+				<result column="filterValue" type="string" />
+				<result column="rank" type="integer" />
+				<result column="section" type="integer" />
+			</resultList>
+			<content>
+                <![CDATA[
+	
+					select 
+						uci.id,
+						uci.userChatContentId,
+						uci.messageId,
+						uci.receiveUserId,
+						uci.sendUserId,
+						uci.type,
+						uci.value,
+						uci.filterValue,
+						uci.rank,
+						uci.section
+						
+                    from im_user_chat_item uci
+                    where 1=1
+                    
+                    <#if userChatContentIds?? >
+                    	and uci.userChatContentId in( :userChatContentIds )
+                    </#if>
+                    
+                    order by  uci.section, uci.rank
+                ]]>
+			</content>
+		</query>
+		
+		
+		<query name="queryUserChatList" type="sql">
+			<resultList>
+				
+				<result column="receiveUserId" type="string" />
+				<result column="receiveUserHead" type="string" />
+				<result column="receiveUserRole" type="string" />
+				<result column="receiveUserName" type="string" />
+				<result column="receiveUserNickname" type="string" />
+				
+				<result column="sendUserId" type="string" />
+				<result column="sendUserHead" type="string" />
+				<result column="sendUserRole" type="string" />
+				<result column="sendUserName" type="string" />
+				<result column="sendUserNickname" type="string" />
+				
+				<result column="time" type="timestamp" />
+			</resultList>
+			<content>
+                <![CDATA[
+	
+					select distinct
+
+						ucc.receiveUserId,
+						ucc.receiveUserHead,
+						ucc.receiveUserRole,
+						ucc.receiveUserName,
+						ucc.receiveUserNickname,
+					
+						ucc.sendUserId,
+						ucc.sendUserHead,
+						ucc.sendUserRole,
+						ucc.sendUserName,
+						ucc.sendUserNickname,
+
+						(select max(iucc.time) from im_user_chat_content iucc where iucc.receiveUserId=ucc.receiveUserId and iucc.sendUserId=ucc.sendUserId) time
+						
+					from im_user_chat_content ucc
+                    where 1=1
+                    
+                    <#if receiveUserId?? >
+                    	and ucc.receiveUserId = :receiveUserId
+                    </#if>
+                    
+                    <#if sendUserId?? >
+                    	and ucc.sendUserId = :sendUserId
+                    </#if>
+
+                    <#if chatUserRole?? >
+                    	and( ucc.receiveUserRole = :chatUserRole or ucc.sendUserRole = :chatUserRole )
+                    </#if>
+
+                    <#if chatReceiveUserId?? && ''!=chatReceiveUserId >
+                    	and( ucc.receiveUserId = :chatReceiveUserId or ucc.sendUserId = :chatReceiveUserId )
+                    </#if>
+                    
+                    <#if chatSendUserId?? && ''!=chatSendUserId >
+                    	and( ucc.sendUserId = :chatSendUserId or ucc.receiveUserId = :chatSendUserId )
+                    </#if>
+                    
+					order by ucc.`timestamp` desc
+                ]]>
+			</content>
+		</query>
+		
+		
+		
+		
+		<query name="getOfflineUserIdList" type="sql">
+			<content>
+                <![CDATA[
+					select distinct 
+					sendUserId 
+					from im_user_chat_content where 
+					isSend='0'
+					
+					and receiveUserId = :receiveUserId
+                ]]>
+			</content>
+		</query>
+		
+		
+		
+		<query name="getOfflineCountList" type="sql">
+			<content>
+                <![CDATA[
+					select 
+					sendUserId sendUserId,
+					count(1) count
+					from im_user_chat_content 
+					where 
+					receiveUserId=:receiveUserId
+					and isSend='0' 
+					group by sendUserId
+					limit 0,:count
+                ]]>
+			</content>
+		</query>
+		<query name="getOfflineCountListByIds" type="sql">
+			<content>
+                <![CDATA[
+					select 
+					sendUserId sendUserId,
+					count(1) count
+					from im_user_chat_content 
+					where 
+					receiveUserId=:receiveUserId
+					and isSend='0' 
+					and sendUserId in( :ids )
+					group by sendUserId
+                ]]>
+			</content>
+		</query>
+	</space>
+</body>

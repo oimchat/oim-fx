@@ -1,0 +1,132 @@
+body{
+	margin:0;
+	padding:0;
+	color:#333;
+	background:#eee url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/retina_dust.png);
+	text-shadow:0 1px 0 #fff;
+	text-align:center;
+	font-family:arial;
+	cursor:default;
+	}
+a, a:visited{
+	color:#333
+	}
+::selection{
+	background:transparent;
+	}
+-moz-::selection{
+	background:transparent;
+	}
+h1, h2, h4{
+	font-family: 'Rokkitt', serif;
+	font-weight:100;
+	font-size:72px;
+	}
+	h1{
+		text-align:center;
+		}
+	h2{
+		font-size:36px;
+		margin-bottom:0;
+		}
+	h4{
+		font-size:30px;
+		text-align:center;
+		}
+	h4 a{
+		text-decoration:none;
+		}
+h3{
+	font-family: 'Rokkitt', serif;
+	margin-bottom: 0;
+	border-bottom: 1px solid #DDD;
+	-webkit-box-shadow: 0 1px 0 white;
+	-moz-box-shadow: 0 1px 0 white;
+	box-shadow: 0 1px 0 white;
+	margin-top: 20px;
+	}
+	#download{
+	    background: #fefefe;
+	    width: 500px;
+	    margin: 0 auto;
+	    padding: 20px;
+	    -webkit-border-radius: 5px;
+	    -moz-border-radius: 5px;
+	    border-radius: 5px;
+	    border: 1px solid rgba(0,0,0,0.2);
+		}
+		
+	.description{
+		text-align:left;
+		width:540px;
+		margin:0 auto;
+		padding:20px;
+	}
+	
+	pre{
+	    background: #333;
+	    overflow: auto;
+	    padding: 10px;
+	    color: #fefefe;
+	    text-shadow: 0 1px 2px #000;
+	    -webkit-box-shadow: 0 1px 0 #fff, 0 1px 2px #000 inset;
+	    -moz-box-shadow: 0 1px 0 #fff, 0 1px 2px #000 inset;
+	    box-shadow: 0 1px 0 #fff, 0 1px 2px #000 inset;
+		}
+		
+	.dropdown-menu{
+		text-shadow:none;
+	}
+	
+	
+	table{
+		font-size:12px;
+		border-collapse:collapse;
+		background:#fefefe;
+	    border: 1px solid rgba(0,0,0,0.2);
+	    font-family:monospace;
+	    }
+	    table th:last-child{
+		    width:175px;
+	    }
+	
+	table th, table td:last-child{
+		font-family:arial;
+	}
+	
+	.me-codesta{
+		display: block;
+		margin: 0 auto;
+		}
+		
+	.amp{
+		font-family:Baskerville,'Goudy Bookletter 1911',Palatino,'Book Antiqua',serif;
+		font-style:italic;
+	}
+	.finale{
+		position:relative;
+		height:150px;
+	}
+	.finale h1{
+		position:absolute;
+		width:100%;
+		-webkit-transition: opacity 0.2s linear; 
+		-moz-transition: opacity 0.2s linear; 
+		-o-transition: opacity 0.2s linear; 
+         transition: opacity 0.2s linear; 
+         }
+         .finale .toggle{
+	         opacity:0;
+	         }
+	         
+	#donate{
+		display:none;
+	}
+	.thanks{
+		width:500px;
+		margin:30px auto;
+	}
+	a#download{
+		display:block;
+		text-decoration:none;
+	}

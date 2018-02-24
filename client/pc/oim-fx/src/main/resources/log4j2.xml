@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="off" monitorInterval="1800">
+    <properties>
+        <property name="LOG_HOME">logs</property>
+        <property name="FILE_NAME">oim-fx</property>
+    </properties>
+    <appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingRandomAccessFile name="fileLog" fileName="${LOG_HOME}/${FILE_NAME}.log" filePattern="${LOG_HOME}/${FILE_NAME}_%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />
+            <SizeBasedTriggeringPolicy size="1 MB" />
+        </RollingRandomAccessFile>
+    </appenders>
+    <loggers>
+    	<!-- -->
+    	<root level="debug">
+            <appender-ref ref="console"/>
+        </root>
+        
+        <!-- 
+        <root level="error">
+            <appender-ref ref="console"/>
+            <appender-ref ref="fileLog"/>
+        </root>
+        -->
+        
+        <!--过滤掉spring和hibernate的一些无用的debug信息-->
+        <logger name="org.springframework" level="warn" additivity="false">
+        	<appender-ref ref="console"/>
+        </logger>
+        <logger name="org.hibernate" level="warn" additivity="false">
+        	<appender-ref ref="console"/>
+        </logger>
+        <logger name="org.hibernate.loader.entity" level="warn" additivity="false">
+        	<appender-ref ref="console"/>
+        </logger>
+        <logger name="org.hibernate.loader.plan" level="warn" additivity="false">
+        	<appender-ref ref="console"/>
+        </logger>
+        <logger name="org.hibernate.SQL" level="debug" additivity="false">
+        	<appender-ref ref="console"/>
+        </logger>
+        <logger name="httpclient" level="warn" additivity="false">
+        	<appender-ref ref="console"/>
+        </logger>
+         <logger name="httpclient.wire.content" level="warn" additivity="false">
+        	<appender-ref ref="console"/>
+        </logger>
+        <logger name="org.apache" level="warn" additivity="false">
+        	<appender-ref ref="console"/>
+        </logger>
+        
+        <logger name="org.comtel2000" level="warn" additivity="false">
+        	<appender-ref ref="console"/>
+        </logger>
+        
+        <logger name="com.oim" level="debug" additivity="false">
+            <appender-ref ref="console"/>
+            <appender-ref ref="fileLog"/>
+        </logger>
+        
+        <logger name="com.onlyxiahui" level="debug" additivity="false">
+            <appender-ref ref="console"/>
+            <appender-ref ref="fileLog"/>
+        </logger>
+        
+        <logger name="org.hibernate.SQL" level="debug" additivity="false">
+            <appender-ref ref="console"/>
+        </logger>
+        <logger name="org.hibernate.loader" level="debug" additivity="false">
+            <appender-ref ref="console"/>
+        </logger>
+        
+        <logger name="java.sql" level="debug" additivity="false">
+            <appender-ref ref="console"/>
+        </logger>
+        <logger name="com.ibatis" level="debug" additivity="false">
+            <appender-ref ref="console"/>
+        </logger>
+    </loggers>
+</configuration>

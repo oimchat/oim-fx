@@ -1,0 +1,39 @@
+/*******************************************************************************
+ *                                                                             *
+ * WebView                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+ 
+.web-view >.scroll-bar > .thumb{
+    -fx-background-color: #cdcdcd;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.web-view >.scroll-bar > .thumb:hover{
+    -fx-background-color: rgba(90.0,90.0,90.0,0.8);
+}
+
+.web-view >.scroll-bar > .thumb:pressed{
+    -fx-background-color: rgba(70.0,70.0,70.0,0.8);
+}
+
+
+.tree-view {
+    -fx-background-color: null;
+}
+
+.tree-view >  .corner{
+    -fx-background-color: null;
+}
+
+.tree-view > .virtual-flow > .corner{
+    -fx-background-color: null;
+}
+
+ 
+ 
+
+
+
+

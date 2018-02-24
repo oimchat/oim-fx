@@ -1,0 +1,470 @@
+.label {
+    -fx-font-family: "微软雅黑";
+    -fx-text-fill:black;
+}
+
+.button {
+    -fx-background-color:#38b9f4;
+    -fx-background-radius: 3;
+    -fx-font-family: "微软雅黑";
+    -fx-text-fill: white;
+    -fx-font-size: 12;
+}
+
+.button:focused{
+    -fx-background-color:  rgba(197, 76, 95, 1);
+    -fx-background-radius: 3;
+}
+
+.button:hover {
+    -fx-background-color: rgba(16, 136, 184, 1);
+    -fx-background-radius: 3;
+}
+
+.button:pressed {
+    -fx-background-color:rgba(120, 120, 120, 1);
+    -fx-background-radius: 3;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Toggle Button                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.toggle-button {
+    -fx-background-color:#38b9f4;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+    -fx-background-radius: 3;
+}
+
+.toggle-button:hover {
+    -fx-background-radius: 3;
+}
+
+.toggle-button:focused {
+    -fx-background-radius: 3;
+}
+
+.toggle-button:disabled {
+    -fx-background-radius: 3;
+}
+
+.toggle-button:pressed {
+    -fx-background-radius: 3;
+}
+
+.toggle-button:selected {
+    -fx-background-radius: 3;
+}
+
+.toggle-button:selected:focused {
+    -fx-background-radius: 3;
+}
+
+.web-view >.scroll-bar:vertical {
+    -fx-background-color: rgba(250.0,250.0,250.0,1);
+}
+
+/*********************************/
+
+.button-border {
+    -fx-background-color: #f3f8f8;
+    -fx-background-radius: 3;
+    -fx-background-insets: 1,1,1,1;
+    -fx-border-color:  #858686;
+    -fx-border-radius: 3;
+    -fx-font-family: "微软雅黑";
+    -fx-text-fill: black;
+    -fx-font-size: 12;
+
+}
+
+.button-border:focused{
+    -fx-background-color: #f3f8f8;
+    -fx-background-radius: 3;
+    -fx-border-color:  #47c6f9;
+    -fx-border-radius: 4;
+}
+
+.button-border:hover {
+    -fx-background-color: #91d8fd;
+    -fx-background-radius: 3;
+    -fx-border-radius: 3;
+}
+
+.button-border:pressed {
+    -fx-background-color: #e4f1f8;
+    -fx-background-radius: 3;
+    -fx-border-radius: 3;
+}
+
+/*********************************/
+
+.icon-button {
+    -fx-background-color:null;
+}
+
+.icon-button:focused{
+    -fx-border-color: #4d4e4f;
+    -fx-border-radius: 2;
+    -fx-border-insets: -1,-1,-1,-1;
+}
+
+.icon-button:hover {
+    -fx-border-color: #4d4e4f;
+    -fx-border-radius: 2;
+    -fx-border-insets: -1,-1,-1,-1;
+}
+
+.icon-button:pressed {
+    -fx-border-color: #4d4e4f;
+    -fx-border-radius: 2;
+    -fx-border-insets: -1,-1,-1,-1;
+}
+/*********************************/
+
+.text-field{
+    -fx-background-radius: 3;
+    -fx-border-color: null;
+    -fx-border-radius:3;
+    -fx-border-width:0.5;
+}
+
+.text-field:focused{
+    -fx-background-radius: 3;
+    -fx-border-color: #4e8fe2;
+    -fx-border-radius:3;
+    -fx-border-width:0.5;
+}
+
+.text-field:hover {
+    -fx-background-radius: 3;
+    -fx-border-color: #47c6f9;
+    -fx-border-radius:3;
+    -fx-border-width:0.5;
+}
+
+.text-field:disabled {
+    -fx-background-radius: 3;
+    -fx-border-color: #ced3d8;
+    -fx-border-radius:3;
+    -fx-border-width:0.5;
+}
+
+/******************************/
+.separator {
+    /*-fx-background-color:null;*/
+    -fx-background-insets: 1,0 0 0 0;
+}
+.separator >.line{
+    -fx-background-color:null;
+}
+/******************************/
+.head-common-image-pane {
+    -fx-background-color: null;
+}
+.head-common-image-pane:hover {
+    -fx-effect: dropshadow( three-pass-box , rgba(45,183,239,1) , 10, 0.7 , 0 , 0 );
+}
+.head-common-image-pane:focused {
+    -fx-effect: dropshadow( three-pass-box , -fx-focus-color , 5, 0.7 , 0 , 0 );
+}
+
+
+.image-head-view:hover {
+    -fx-border-color: #2883f6;
+}
+
+
+.head-image-pane {
+    -fx-background-color: null;
+}
+.head-image-pane:hover {
+    /* -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.6) , 10, 0.5 , 0 , 0 ); */
+}
+.head-image-pane:focused {
+    /* -fx-effect: dropshadow( three-pass-box , -fx-focus-color , 5, 0.7 , 0 , 0 ); */
+}
+
+
+.head-image-show {
+    -fx-background-color: null;
+    /*-fx-background-color: #888888;*/
+    /*-fx-padding: -3;*/
+}
+.head-image-show:hover {
+	-fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.6) , 10, 0.5 , 0 , 0 );
+    /* -fx-border-color: #4e8fe2;;
+    -fx-border-radius:5;
+    -fx-border-width:1; 
+    -fx-background-color: #ffffff;*/
+}
+.head-image-show:focused {
+	-fx-effect: dropshadow( three-pass-box , -fx-focus-color , 5, 0.7 , 0 , 0 );
+    /* -fx-border-color: #4e8fe2;;
+    -fx-border-radius:5;
+    -fx-border-width:1; 
+    -fx-background-color: #ffffff;*/
+}
+
+/**好友群组等列表相关样式 start **/
+.list-head-item{
+    -fx-background-color: null;
+}
+
+.list-head-item:hover {
+    -fx-background-color: #29a1c4;
+}
+.list-head-item:pressed {
+    -fx-background-color: #fdffc1;
+}
+
+.list-head-item:focused {
+    -fx-background-color: #fdffc1;
+}
+
+
+.list-top-title{
+    -fx-background-color: null;
+}
+
+.list-top-title:hover {
+    -fx-background-color: rgba(255,255,255,0.7);
+}
+
+
+
+
+
+#bg{
+    -fx-background-image:url("../images/1.jpg");
+    -fx-background-radius: 5;
+    -fx-background-position:0% 0%;
+    -fx-border-color:null;
+    -fx-border-radius:5;
+    -fx-border-width:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#highlightsButton {
+    -fx-background-color: null;
+    -fx-padding: -10 0 -10 0;
+    /* -fx-background-image: url("images/ribbon-highlights.png");*/
+    -fx-background-position: left top;
+    -fx-background-repeat: no-repeat;
+}
+#highlightsButton:hover, #newButton:hover {
+    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.6) , 10, 0.5 , 0 , 0 );
+}
+#highlightsButton:focused, #newButton:focused {
+    -fx-effect: dropshadow( three-pass-box , -fx-focus-color , 5, 0.7 , 0 , 0 );
+}
+/*
+#highlightsButton:focus, #newButton:focus {
+    -fx-effect: dropshadow( three-pass-box , -fx-focus-color , 10, 0.5 , 0 , 0 );
+}
+#highlightsButton .button:focus, #newButton .button:focus {
+    -fx-effect: dropshadow( three-pass-box , -fx-focus-color , 10, 0.5 , 0 , 0 );
+}*/
+
+
+.sample-tile {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+    -fx-text-fill: white;
+    -fx-graphic-hpos: center;
+    -fx-graphic-vpos: top;
+    -fx-alignment: center;
+    -fx-padding: 4px 4px 3px 4px;
+    -fx-font-size: 14px;
+}
+
+.sample-tile .text {
+    -fx-font-smoothing-type: lcd;
+}
+
+.sample-tile:hover {
+    /*   -fx-border-color: derive(-fx-accent,80%), -fx-accent, derive(-fx-accent,80%);
+       -fx-border-insets: -1,0,1;
+       -fx-border-radius: 7,6,5; */
+    -fx-effect: dropshadow( three-pass-box , white , 8 , 0.4 , 0 , 0 );
+}
+.sample-tile:focused {
+    -fx-effect: dropshadow( three-pass-box , derive(-fx-focus-color, 20%), 12 , 0.6 , 0 , 0 );
+}
+
+
+/*******************************************************************************                                                                          *
+ * find-add-button                                                             *                                                                           *
+ ******************************************************************************/
+
+
+.find-add-button {
+    -fx-background-color:#85c7eb;
+    -fx-background-radius: 3;
+    -fx-font-family: "微软雅黑";
+    -fx-text-fill: white;
+    -fx-font-size: 12;
+}
+
+.find-add-button:focused{
+    -fx-background-color:#85c7eb;
+    -fx-background-radius: 3;
+}
+
+.find-add-button:hover {
+    -fx-background-color:#228dce;
+    -fx-background-radius: 3;
+}
+
+.find-add-button:pressed {
+    -fx-background-color:#228dce;
+    -fx-background-radius: 3;
+}
+
+
+.find-add-button >.find-add-icon{
+   -fx-background-image :url("../../find/3_add_normal.png"); 
+}
+
+.find-add-button:focused >.find-add-icon{
+   -fx-background-image :url("../../find/3_add_hover.png");
+}
+
+.find-add-button:hover >.find-add-icon{
+   -fx-background-image :url("../../find/3_add_hover.png");
+}
+
+.find-add-button:pressed >.find-add-icon {
+    -fx-background-image :url("../../find/3_add_down.png");
+}
+
+
+
+
+
+/*******************************************************************************                                                                          *
+ * find-add-button                                                             *                                                                           *
+ ******************************************************************************/
+
+.close-button-1 {
+  	-fx-background-color: null;
+    -fx-background-image: url("../images/close/32_close_normal.png");
+}
+
+.close-button-1:focused{
+  	-fx-background-color: null;
+    -fx-background-image: url("../images/close/32_close_pushed.png");
+}
+
+.close-button-1:hover {
+  	-fx-background-color: null;
+    -fx-background-image: url("../images/close/32_close_hover.png");
+}
+
+.close-button-1:pressed {
+  	-fx-background-color: null;
+    -fx-background-image: url("../images/close/32_close_pushed.png");
+}
+
+
+/*******************************************************************************                                                                          *
+ * icon-1-button                                                             *                                                                           *
+ ******************************************************************************/
+.icon-1-button {
+    -fx-background-color:null;
+    -fx-background-radius: 1;
+    -fx-font-family: "微软雅黑";
+    -fx-text-fill: white;
+    -fx-font-size: 12;
+}
+
+.icon-1-button:focused{
+    -fx-background-color: rgba(153, 153, 153, 0.5);
+    -fx-background-radius: 1;
+}
+
+.icon-1-button:hover {
+    -fx-background-color: rgba(160, 160, 160, 0.5);
+    -fx-background-radius: 1;
+}
+
+.icon-1-button:pressed {
+    -fx-background-color:rgba(120, 120, 120, 0.5);
+    -fx-background-radius: 1;
+}
+
+
+
+#hiddenSplitter *.split-pane-divider,
+#hiddenSplitter *.vertical-grabber,
+#hiddenSplitter *.horizontal-grabber {
+
+    -fx-background-color: null;
+
+    -fx-border-color: null;
+
+    -fx-padding: 5px;
+
+}
+
+
+.tab-header-area{
+	-fx-padding: 0 0 0 0;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 0 0;
+ /* -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
+    -fx-padding: 0 0 0 0;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #ffffff;
+    -fx-border-color: white white #e1e1e1 white;
+    -fx-border-insets: 0;
+    
+}
+
+.tab-pane{
+    -fx-tab-min-width:90px;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 0,0,0;
+}
+.tab-pane .tab{
+    -fx-background-color: #e6e6e6;
+    -fx-background-radius: 0;
+
+}
+
+.tab-pane .tab:selected{
+    -fx-background-color: #299bb4;
+}
+
+.tab .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: #ffffff;
+}

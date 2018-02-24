@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>OIM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="css/layout.css" rel="stylesheet" type="text/css"/>
+        <link href="css/oim.css" rel="stylesheet" type="text/css"/>
+        <link href="css/login.css" rel="stylesheet" type="text/css"/>
+        <link href="css/layui.css" rel="stylesheet" type="text/css"/>
+
+        <link rel="stylesheet" href="js/lib/SinaEmotion/jquery-sinaEmotion-2.0.0.css">
+        <link rel="stylesheet" href="js/lib/context/context.standalone.css" type="text/css"/>
+        <link rel="stylesheet" href="js/lib/jquery-fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" href="js/lib/dropzone/basic.min.css">
+        <link rel="stylesheet" href="js/lib/dropzone/dropzone.min.css">
+
+        <script src="js/lib/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/lib/jquery-form/jquery.form.js"></script>
+        <script src="js/lib/layer/3.1.1/layer.js"></script>
+
+        <script src="js/lib/SinaEmotion/jquery-only-sina-emotion-2.0.0.js"></script>
+        <script src="js/lib/md5/md5.min.js" type="text/javascript"></script>
+        <script src="js/lib/context/context.js" type="text/javascript"></script>
+        <script src="js/lib/jquery-fancybox/jquery.fancybox.js"></script>
+        <script src="js/lib/dropzone/dropzone.min.js"></script>
+
+        <script src="js/im/app/global.js" type="text/javascript"></script>
+
+        <script src="js/im/common/common.base.js" type="text/javascript"></script>
+        <script src="js/im/common/common.jquery.js" type="text/javascript"></script>
+        <script src="js/im/common/common.util.js" type="text/javascript"></script>
+        <script src="js/im/common/im.common.lib.js" type="text/javascript"></script>
+        <script src="js/im/common/socket.js" type="text/javascript"></script>
+
+        <script src="js/im/im/im.base.js" type="text/javascript"></script>
+        <script src="js/im/im/in.net.server.js" type="text/javascript"></script>
+
+        <script src="js/im/ui/view.common.js" type="text/javascript"></script>
+        <script src="js/im/ui/view.main.js" type="text/javascript"></script>
+        <script src="js/im/ui/view.impl.js"></script>
+
+        <script src="js/im/business/common/im.action.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.api.common.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.api.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.box.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.context.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.manager.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.sender.js" type="text/javascript"></script>
+
+        <script src="js/im/business/impl/im.service.js" type="text/javascript"></script>
+        <script src="js/im/business/impl/im.controller.js" type="text/javascript"></script>
+
+        <script src="js/im/app/app.main.js" type="text/javascript"></script>
+        <script src="js/im/app/app.functon.js"></script>
+
+        <style type="text/css">
+            .baidu-map {width: 400px;height: 400px;overflow: hidden;margin:5px 5px 5px 5px;font-family:"微软雅黑";}
+        </style>
+
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5myNalGr4PYKhoqqXT2eYfGKGZdRmPbB"></script>
+
+
+    </head>
+    <body>
+
+        <div id="login_pane" style="display: none;">
+            <div id="login_data_pane" class="login-box" style="display: none;">
+                <h3>用户登录</h3>
+                <div class="login-input-outer">
+                    <span class="login-user-icon"></span>
+                    <input id="account" class="login-text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+                </div>
+                <div class="login-input-outer">
+                    <span class="login-password-icon"></span>
+                    <input id="password" class="login-text" style="color: #FFFFFF !important; position:absolute; z-index:100;" value="" type="password" placeholder="请输入密码">
+                </div>
+                <div id="login_button" class="login_bottom">
+                    <a onclick="login();" class="login-action-button login-submit" href="javascript:;" style="color: #FFFFFF">登录</a>
+                </div>
+            </div>
+
+            <div id="login_waiting_pane" class="login-box" style="display: none;">
+                <h3>登录中</h3>
+                <div>
+                    <img src="images/login/loading_312_4.gif" height="4" width="312"/>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="main_pane" style="display: none;">
+            <div id="chat_pane" class="oim">
+                <div class="sidebar">
+                    <div class="tab">
+                        <ul>
+                            <li id="chat_tab">
+                                <div class="wrap">
+                                    <img class="tab-icon" height="36" width="36" alt="消息列表" src="images/main/tab/message_selected.png" />
+                                    <div id="chat_tab_red" ></div>
+                                </div>
+                            </li>
+                            <li id="user_tab">
+                                <div class="wrap">
+                                    <img class="tab-icon" height="36" width="36" alt="通讯录" src="images/main/tab/user_normal.png" />
+                                </div>
+                            </li>
+                            <li id="group_tab">
+                                <div class="wrap">
+                                    <img class="tab-icon" height="36" width="36" alt="群列表" src="images/main/tab/group_normal.png"/>-->
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-more" id="tab-more" >
+                        <a id="bottom_menu" href="javascript:void(0);">
+                            <img src="images/chat/top/more_n.png" alt=""/>
+                        </a>
+                    </div>
+                </div>
+                <div class="pane">
+                    <div class="pane-node">
+                        <div class="list">
+                            <div class="chose">
+                                <fieldset class=" user-title layui-elem-field layui-field-title " style="margin-top:-1px;  margin-bottom:0;" >
+                                    <div class="user-head">
+                                        <img id="own_user_head" class="avatar" width="40" height="40" alt="user" src="images/common/head/user/2.png" style="display: inline-block;position:absolute;top:19px;left:10px;">
+                                    </div>
+                                    <div class="user-message">
+                                        <p id="own_nickname"></p>
+                                        <p id="own_signature"></p>
+                                    </div>
+                                </fieldset>
+                                <div class="list-root-pane ">
+                                    <div class="search">
+                                        <input id="find_text_input" type="text" placeholder="搜索" onfocus="showFind()" onkeyup="showFindResult()"/>
+                                        <span style="position:absolute;top:12px;left:147px;"><img id="find_switch" src="images/main/search/search.png" onclick="hideFind()"/></span>
+                                        <span onclick="openAddUser();"><img src="images/main/search/add.png" style="margin-top:-2px;"/></span>
+                                    </div>
+                                    <div id="sousuo">
+                                        <div class="list-root-pane-list">
+                                            <div class="content" >
+                                                <ul id="find_result_list" class="list-node-item" >
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="chat_tab_pane">
+                                        <div class="list-root-pane-list">
+                                            <div class="content" >
+                                                <ul id="chat_root" class="list-node-item" >
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="user_tab_pane">
+                                        <div class="list-root-pane-list">
+
+                                            <div id="user_root" class=" "></div>
+                                        </div>
+
+                                    </div>
+                                    <div id="group_tab_pane">
+                                        <div class="list-root-pane-list">
+                                            <!--<div id="room_root" class=" "></div>-->
+                                            <div id="group_root" class=" "></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="chat_show_pane" class="show-pane">
+                            <div class="chat-pane">
+                                <div class="chat-no">
+                                    <img class="chat-no-img" src="images/logo/logo_256.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="user_show_pane" class="show-pane">
+                            <div class="chat-pane">
+                                <div class="chat-no">
+                                    <img class="chat-no-img" src="images/logo/logo_256.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="group_show_pane" class="show-pane">
+                            <div class="chat-pane">
+                                <div class="chat-no">
+                                    <img class="chat-no-img" src="images/logo/logo_256.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="group-list" class="group-list">
+                    <div class="list-members">
+                        <div class="search1" style="margin-left: 28px;">
+                            <!--<input type="text" placeholder="搜索" id="in2" onfocus="showdiv2()"/>-->
+                            <!--<span style="position:absolute;top:22px;left:183px;"><img id="switch2" src="images/main/tab/sousuo.png" onclick="hidiv2()"/></span>-->
+                        </div>
+                        <ul id="room_member_list" class="group-member">
+
+
+                        </ul>
+                        <div class="group-infomation">
+                            <p >群名</p>
+                            <p id="room_member_pane_name"></p>
+                        </div>
+                        <div class="group-infomation">
+                            <p>我的群昵称</p>
+                            <input type="text" id="write-in" value="" style="display: none;" />
+                            <div id="no-edit">
+                                <span id="room_member_own_nickname"></span>
+                                <!--<img src="images/edit.png" onclick="editable()"/>-->
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="quitRoom();" type="button" class="shanchu">删除并退出本群</button>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <audio id="audio-message" src="sound/msg_g.wav" preload="auto"></audio>
+        <div style="display: none;">
+            <form action="" method="POST" enctype="multipart/form-data" id="image_upload_form">
+                <input id="image_from_id" type="hidden" name="fromId">
+                <input id="image_to_id" type="hidden" name="toId">
+                <input id="image_to_type" type="hidden" name="type">
+                <input name="FileData" id="image_upload_file" type="file" onchange="imageStart()">
+            </form>
+
+            <form action="" method="POST" enctype="multipart/form-data" id="head_image_upload_form">
+                <input id="head_user_id" type="hidden" name="userId">
+                <input name="FileData" id="head_image_upload_file" type="file" onchange="headImageStart()">
+            </form>
+
+        </div>
+
+        <div id="file_send_pane" style="display: none;">
+            <form id="file_upload_form" action="/image/uploadHead" class="dropzone" method="post" enctype="multipart/form-data">
+                <input id="file_from_user_id" type="hidden" name="fromId">
+                <input id="file_to_user_id" type="hidden" name="toId">
+                <!--<input type="file" name="file">-->
+            </form>
+        </div>
+
+        <div style="display: none;width: 100%;"  id="update_user_info" class="modified">
+            <div style="width: 100%;text-align: center;">
+                <div class="modified-img">
+                    <img  id="user_data_head" src="" alt="">
+                </div>
+                <div class="modified-information">
+                    <ul>
+                        <li><label>账号：</label><input id="user_data_account" type="text" disabled></li>
+                        <li><label>昵称：</label><input id="user_data_nickname" type="text"></li>
+                        <li><label>个性签名：</label><input id="user_data_signature" type="text"></li>
+                        <li><label>手机：</label><input id="user_data_mobile" type="text"></li>
+                        <li><label>Email：</label><input id="user_data_email" type="text"></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!--<div style="display: none;"  id="update_user_info">-->
+            <!--<div class="info-base">-->
+                <!--<div class="info-pane">-->
+                    <!--<div class="info-head">-->
+                        <!--<img  id="user_data_head" class="avatar" width="40" height="40" src="" alt="">-->
+                    <!--</div>-->
+                    <!--<div class="info-content">-->
+                        <!--<div style="text-align: right;width: 360px;">-->
+                            <!--<ul>-->
+                                <!--<li><label>账号：<span id="user_data_account"></span></label></li>-->
+                                <!--<li><label>昵称：<input id="user_data_nickname" type="text"></label></li>-->
+                                <!--<li><label>手机：<input id="user_data_mobile" type="text"></label></li>-->
+                                <!--<li><label>Email：<input id="user_data_email" type="text"></label></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div style="display: none;"  id="add_user">
+            <div class="show-info-base">
+                <div class="show-info-pane">
+                    <div class="show-info-content">
+                        <div style="text-align: right;width: 260px;">
+                            <ul>
+                                <li><label>账号：</label><input id="add_user_account" type="text" style="width: 150px"></li>
+                                <li><label>备注：</label><input id="add_user_remark" type="text" style="width: 150px"></li>
+                                <li><label>好友分组：</label>
+                                    <select id="add_user_category" style="width: 150px">
+
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: none;"  id="find_room_pane">
+            <div class="group">
+                <p>群列表</p>
+                <div class="list_group">
+                    <ul id="find_room_list">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!--<div style="display: none;"  id="find_room_pane">-->
+            <!--<div class="list">-->
+                <!--<div class="layui-side-scroll">-->
+                    <!--<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">-->
+                        <!--<legend>群列表</legend>-->
+                    <!--</fieldset>-->
+                    <!--<div class="list-root-pane ">-->
+                        <!--<div class="content ">-->
+                            <!--<ul id="find_room_list" class="list-node-item" >-->
+
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+        <div style="display: none;" id="create_room_pane">
+            <div class="show-info-base">
+                <div class="show-info-pane">
+                    <div class="show-info-content">
+                        <div style="text-align: right;width: 260px;">
+                            <ul>
+                                <li><label>群名称：</label><input id="create_room_name" type="text" style="width: 150px"></li>
+                                <!--<li><label>在群中的昵称：</label><input id="create_room_nickname" type="text" style="width: 150px"></li>-->
+                                <li><label>密码：</label><input id="create_room_password" type="password" style="width: 150px"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: none;"  id="join_room_pane">
+            <div class="info-base">
+                <div class="show-info-pane">
+                    <div class="show-info-content">
+                        <div style="text-align: right;width: 260px;">
+                            <ul>
+                                <!--<li><label>昵称：</label><input id="join_room_nickname" type="text" style="width: 150px"></li>-->
+                                <li><label>密码：</label><input id="join_room_password" type="password" style="width: 150px"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="map_pane" style="display: none;">
+            <div id="map_div" class="baidu-map" ></div>
+        </div>
+
+
+        <script type="text/javascript">
+
+            var h = top.window.location.href;
+
+        </script>
+
+
+        <script type="text/javascript">
+            initMap("map_div", 116.404, 39.915);
+
+            Dropzone.options.fileUploadForm = {
+                paramName: "FileData",
+                maxFilesize: 1024,
+                addRemoveLinks: true,
+                dictDefaultMessage: "鼠标点击或者拖文件到此处",
+                dictFallbackMessage: "您的浏览器不支持上传！",
+                dictFallbackText: "Please use the fallback form below to upload your files like in the olden days.",
+                dictFileTooBig: "文件太大了 ({{filesize}}MB). 最大只能上传: {{maxFilesize}}MB.",
+                dictInvalidFileType: "You can't upload files of this type.",
+                dictResponseError: "文件上传失败",
+                dictCancelUpload: "清除",
+                dictCancelUploadConfirmation: "确定清除？",
+                dictRemoveFile: "删除",
+                init: function () {
+                    var own = this;
+                    this.on("processing", function (file) {
+                        var url = sever_url + '/api/v1/oim/file/upload.do';
+
+//                        var url = sever_url + '/file/upload';
+                        //var url="http://47.92.117.28:8080/upload/api?uid=im&ticket=d39bf26b-ca54-4cb8-8f0f-6a74d8f25f88";
+                        this.options.url = url;
+                    });
+                    this.on("success", function (file, data) {
+                        var r = jsonToObject(data);
+                        if (r.success) {
+                            own.removeFile(file);
+                            layer.msg("发送成功。");
+                        } else {
+                            layer.msg("发送失败！");
+                        }
+                        fileSendDone(file, data);
+                        //                        var info = data.info;
+                        //                        if (info.success) {
+                        //                            own.removeFile(file);
+                        //                            layer.msg("发送成功。");
+                        //                        } else {
+                        //                            layer.msg("发送失败！");
+                        //                        }
+                    });
+                }
+            };
+
+            //            $("#file_upload_form").dropzone({
+            //                url: "handle-upload.php",
+            //                addRemoveLinks: true,
+            //                dictRemoveLinks: "x",
+            //                dictCancelUpload: "x",
+            //                maxFiles: 10,
+            //                maxFilesize: 5,
+            //                acceptedFiles: ".js",
+            //                init: function() {
+            //                    this.on("success", function(file) {
+            //                        console.log("File " + file.name + "uploaded");
+            //                    });
+            //                    this.on("removedfile", function(file) {
+            //                        console.log("File " + file.name + "removed");
+            //                    });
+            //                }
+            //            });
+
+            //            $("#file_upload_form").dropzone({
+            //                url:"index.php", //必须填写
+            //                method:"post",  //也可用put
+            //                paramName:"Filedata", //默认为file
+            //                maxFiles:10,//一次性上传的文件数量上限
+            //                maxFilesize: 20, //MB
+            //                acceptedFiles:".jpg,.gif,.png", //上传的类型
+            //                parallelUploads: 3,
+            //                dictMaxFilesExceeded: "您最多只能上传10个文件！",
+            //                dictResponseError: '文件上传失败!',
+            //                dictInvalidFileType: "你不能上传该类型文件,文件类型只能是*.jpg,*.gif,*.png。",
+            //                dictFallbackMessage:"浏览器不受支持",
+            //                dictFileTooBig:"文件过大上传文件最大支持.",
+            //                init: function() {
+            //                this.on("success", function(file) {
+            //                    console.log("File " + file.name + "uploaded");
+            //                });
+            //                this.on("removedfile", function(file) {
+            //                    console.log("File " + file.name + "removed");
+            //                });
+            //            }
+            //            });
+
+
+            function uploadHead() {
+                var pb = appContext.getBox(PersonalBox);
+                var userId = pb.getOwnerUserId();
+                var url = sever_url + '/api/v1/oim/file/upload.do';
+//                var url = sever_url + '/file/upload';
+//                var url = sever_url + '/image/uploadHead';
+                $("#head_user_id").val(userId);
+                $("#head_image_upload_form").attr("action", url);
+                $("#head_image_upload_file").click();
+            }
+
+            $("#head_image_upload_form").ajaxForm({
+                beforeSerialize: function () {
+                    var filePath = $("#head_image_upload_file").val();
+                    var suffixStart = filePath.lastIndexOf(".");
+                    var suffix = filePath.substring(suffixStart, filePath.length).toUpperCase();
+
+                    var images = ".jpg,.jpeg,.gif,.png,.bmp";
+                    var suffixName = suffix.toLowerCase();
+                    if (images.indexOf(suffixName) < 0) {
+                        layer.alert("请选中图片");
+                        return false;
+                    }
+                },
+                success: function (json) {
+                    $("#head_image_upload_file").val("");
+                    headUploadDone(json);
+//                    var info = data.info;
+//                    if (info.success) {
+//                        var ps = appContext.getSender(PersonalSender);
+//                        ps.getUserData();
+//                    } else {
+//                        var text = getDefaultErrorText(info);
+//                        layer.alert(text);
+//                    }
+                }
+            });
+
+            function headImageStart() {
+                $("#head_image_upload_form").submit();
+            }
+
+
+
+            var sendImageFromId = "";
+            var sendImageToId = "";
+            var sendImageType = "";
+
+            function uploadImage(fromId, toId, type) {
+                if (isEmpty(fromId)) {
+                    var pb = appContext.getBox(PersonalBox);
+                    fromId = pb.getOwnerUserId();
+                }
+                sendImageFromId = fromId;
+                sendImageToId = toId;
+                sendImageType = type;
+
+                var url = sever_url + '/api/v1/oim/file/upload.do';
+                // var url = "http://47.92.117.28:8080/upload/api?uid=im&ticket=d39bf26b-ca54-4cb8-8f0f-6a74d8f25f88";
+                //var url=sever_url + '/image/upload';
+//                var url = sever_url + '/file/upload';
+                $("#image_from_id").val(fromId);
+                $("#image_to_id").val(toId);
+                $("#image_upload_form").attr("action", url);
+                $("#image_upload_file").click();
+            }
+
+            var imageName = "";
+
+            $("#image_upload_form").ajaxForm({
+                beforeSerialize: function () {
+                    var filePath = $("#image_upload_file").val();
+                    var suffixStart = filePath.lastIndexOf(".");
+                    var suffix = filePath.substring(suffixStart, filePath.length).toUpperCase();
+
+                    var images = ".jpg,.jpeg,.gif,.png,.bmp";
+                    var suffixName = suffix.toLowerCase();
+                    if (images.indexOf(suffixName) < 0) {
+                        layer.alert("请选中图片");
+                        return false;
+                    }
+                },
+                success: function (json) {
+                    $("#image_upload_file").val("");
+                    var data = jsonToObject(json);
+                    if (data.success) {
+                        var url = data.file_url;
+                        var imageData = {"name": "001.png", "size": 0, "url": url};
+
+                        if (sendImageType == "user") {
+                            sendUserImage(sendImageFromId, sendImageToId, imageData);
+                        }
+                        if (sendImageType == "room") {
+                            sendRoomImage(sendImageFromId, sendImageToId, imageData);
+                        }
+                    }
+                    //                    var info = data.info;
+                    //                    if (info.success) {
+                    //
+                    //                    } else {
+                    //                        var text = getDefaultErrorText(info);
+                    //                        layer.alert(text);
+                    //                    }
+                }
+            });
+            function imageStart() {
+                $("#image_upload_form").submit();
+            }
+
+            var map;
+            function initMap(id, longitude, latitude) {
+                // 百度地图API功能
+                map = new BMap.Map(id);
+                var point = new BMap.Point(longitude, latitude);
+
+                map.centerAndZoom(point, 16);
+                map.addOverlay(new BMap.Marker(point));
+
+                //添加地图类型控件
+                map.addControl(new BMap.MapTypeControl({
+                    mapTypes: [
+                        BMAP_NORMAL_MAP,
+                        BMAP_HYBRID_MAP
+                    ]
+                }));
+                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+            }
+
+            function openMap(longitude, latitude) {
+                var point = new BMap.Point(longitude, latitude);
+
+                map.centerAndZoom(point, 16);
+                map.clearOverlays();
+                map.addOverlay(new BMap.Marker(point));
+
+                layer.open({
+                    type: 1,
+                    shade: false,
+                    title: false, //不显示标题
+                    area: ['410px', '410px'], //宽高
+                    content: $("#map_pane"), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+                    cancel: function () {
+                        $("#map_pane").hide();
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

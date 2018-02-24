@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-9-15, 14:28:35
+    Author     : Only
+*/
+
+
+.login-box{
+    width: 400px;
+    height: 500px;
+    padding: 35px;
+    color: #EEE;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -200px;
+    margin-top: -250px;
+}
+.login-box h3{
+    text-align: center;
+    height: 20px;
+    font: 20px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+    color: #FFFFFF;
+    height: 20px;
+    line-height: 20px;
+    padding:0 0 35px 0;
+}
+
+.logon-inof{
+    width: 100%;
+    min-height: 450px;
+    padding-top: 35px;
+    position: relative;
+}
+.login-input-outer{
+    height: 46px;
+    padding: 0 5px;
+    margin-bottom: 30px;
+    border-radius: 50px;
+    position: relative;
+    border: rgba(255,255,255,0.2) 2px solid !important;
+}
+.login-user-icon{
+    width: 25px;
+    height: 25px;
+    background: url(../images/login/login_ico.png);
+    background-position:  -125px 0;
+    position: absolute;
+    margin: 10px 13px;
+}
+.login-password-icon{
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/login/login_ico.png);
+    background-position: -125px -34px;
+    position: absolute;
+    margin: 10px 13px;
+}
+.l-login{
+    position: absolute;
+    z-index: 1;
+    left: 50px;
+    top: 0;
+    height: 46px;
+    font: 14px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
+    line-height: 46px;
+}
+.login-text{
+    width: 220px;
+    height: 46px;
+    outline: none;
+    display: inline-block;
+    font: 14px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
+    margin-left: 50px;
+    border: none;
+    background: none;
+    line-height: 46px;
+}
+/*///*/
+.login-bottom{
+    margin-bottom: 20px
+}
+.login-bottom a{
+    text-decoration: none;
+    outline: none;
+}
+.login-submit {
+    padding: 15px;
+    margin-top: 20px;
+    display: block;
+}
+.login-action-button{
+    line-height: 20px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50px;
+    background: #0096e6;
+}

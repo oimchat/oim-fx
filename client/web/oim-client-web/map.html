@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>OIM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/layout.css" rel="stylesheet" type="text/css"/>
+        <link href="css/oim.css" rel="stylesheet" type="text/css"/>
+        <link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="css/login.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="js/lib/layui/2.1.3/css/layui.css">
+        <link rel="stylesheet" href="js/lib/SinaEmotion/jquery-sinaEmotion-2.0.0.css">
+
+        <!--<link rel="stylesheet" href="js/lib/layer/3.1.0/theme/default/layer.css">-->
+        <!--<script src="js/lib/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>-->
+        <!--<script src="js/lib/layui/2.1.3/layui.all.js"></script>-->
+        <script src="js/lib/jquery/jquery-1.8.3.min.js"></script>
+        <script src="js/lib/layui/2.1.3/layui.js" type="text/javascript"></script>
+        <!--<script src="js/lib/layer/3.1.0/layer.js"></script>-->
+        <script src="js/lib/SinaEmotion/jquery-sinaEmotion-2.0.0.js"></script>
+        <style type="text/css">
+            .baidu-map {width: 420px;height: 420px;overflow: hidden;margin:0;font-family:"微软雅黑";}
+        </style>
+
+    </head>
+    <body>
+        <div id="main_pane" class="baidu-map" >
+
+        </div>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5myNalGr4PYKhoqqXT2eYfGKGZdRmPbB"></script>
+        <script type="text/javascript">
+
+
+
+            // 百度地图API功能
+            var map = new BMap.Map("main_pane");
+            var point = new BMap.Point(116.331398,39.897445);
+
+            map.centerAndZoom(point, 16);
+            map.addOverlay(new BMap.Marker(point));
+
+            //添加地图类型控件
+            map.addControl(new BMap.MapTypeControl({
+                mapTypes:[
+                    BMAP_NORMAL_MAP,
+                    BMAP_HYBRID_MAP
+                ]}));
+            map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+        </script>
+    </body>
+</html>

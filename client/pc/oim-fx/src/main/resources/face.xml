@@ -1,0 +1,640 @@
+<root>
+ <String id="FACE_TOOL_TIP0">
+    微笑
+  </String>
+  <String id="FACE_TOOL_TIP1">撇嘴</String>
+  <String id="FACE_TOOL_TIP2"> 色</String>
+  <String id="FACE_TOOL_TIP3">
+    发呆
+  </String>
+  <String id="FACE_TOOL_TIP4">
+    得意
+  </String>
+  <String id="FACE_TOOL_TIP5">
+    流泪
+  </String>
+  <String id="FACE_TOOL_TIP6">
+    害羞
+  </String>
+  <String id="FACE_TOOL_TIP7">
+    闭嘴
+  </String>
+  <String id="FACE_TOOL_TIP8">
+    睡
+  </String>
+  <String id="FACE_TOOL_TIP9">
+    大哭
+  </String>
+  <String id="FACE_TOOL_TIP10">
+    尴尬
+  </String>
+  <String id="FACE_TOOL_TIP11">
+    发怒
+  </String>
+  <String id="FACE_TOOL_TIP12">
+    调皮
+  </String>
+  <String id="FACE_TOOL_TIP13">
+    呲牙
+  </String>
+  <String id="FACE_TOOL_TIP14">
+    惊讶
+  </String>
+  <String id="FACE_TOOL_TIP15">
+    难过
+  </String>
+  <String id="FACE_TOOL_TIP16">
+    酷
+  </String>
+  <String id="FACE_TOOL_TIP17">
+    冷汗
+  </String>
+  <String id="FACE_TOOL_TIP18">
+    抓狂
+  </String>
+  <String id="FACE_TOOL_TIP19">
+    吐
+  </String>
+  <String id="FACE_TOOL_TIP20">
+    偷笑
+  </String>
+  <String id="FACE_TOOL_TIP21">
+    可爱
+  </String>
+  <String id="FACE_TOOL_TIP22">
+    白眼
+  </String>
+  <String id="FACE_TOOL_TIP23">
+    傲慢
+  </String>
+  <String id="FACE_TOOL_TIP24">
+    饥饿
+  </String>
+  <String id="FACE_TOOL_TIP25">
+    困
+  </String>
+  <String id="FACE_TOOL_TIP26">
+    惊恐
+  </String>
+  <String id="FACE_TOOL_TIP27">
+    流汗
+  </String>
+  <String id="FACE_TOOL_TIP28">
+    憨笑
+  </String>
+  <String id="FACE_TOOL_TIP29">
+    大兵
+  </String>
+  <String id="FACE_TOOL_TIP30">
+    奋斗
+  </String>
+  <String id="FACE_TOOL_TIP31">
+    咒骂
+  </String>
+  <String id="FACE_TOOL_TIP32">
+    疑问
+  </String>
+  <String id="FACE_TOOL_TIP33">
+    嘘...
+  </String>
+  <String id="FACE_TOOL_TIP34">
+    晕
+  </String>
+  <String id="FACE_TOOL_TIP35">
+    折磨
+  </String>
+  <String id="FACE_TOOL_TIP36">
+    衰
+  </String>
+  <String id="FACE_TOOL_TIP37">
+    骷髅
+  </String>
+  <String id="FACE_TOOL_TIP38">
+    敲打
+  </String>
+  <String id="FACE_TOOL_TIP39">
+    再见
+  </String>
+  <String id="FACE_TOOL_TIP40">
+    擦汗
+  </String>
+  <String id="FACE_TOOL_TIP41">
+    抠鼻
+  </String>
+  <String id="FACE_TOOL_TIP42">
+    鼓掌
+  </String>
+  <String id="FACE_TOOL_TIP43">
+    糗大了
+  </String>
+  <String id="FACE_TOOL_TIP44">
+    坏笑
+  </String>
+  <String id="FACE_TOOL_TIP45">
+    左哼哼
+  </String>
+  <String id="FACE_TOOL_TIP46">
+    右哼哼
+  </String>
+  <String id="FACE_TOOL_TIP47">
+    哈欠
+  </String>
+  <String id="FACE_TOOL_TIP48">
+    鄙视
+  </String>
+  <String id="FACE_TOOL_TIP49">
+    委屈
+  </String>
+  <String id="FACE_TOOL_TIP50">
+    快哭了
+  </String>
+  <String id="FACE_TOOL_TIP51">
+    阴险
+  </String>
+  <String id="FACE_TOOL_TIP52">
+    亲亲
+  </String>
+  <String id="FACE_TOOL_TIP53">
+    吓
+  </String>
+  <String id="FACE_TOOL_TIP54">
+    可怜
+  </String>
+  <String id="FACE_TOOL_TIP55">
+    眨眼睛
+  </String>
+  <String id="FACE_TOOL_TIP56">
+    笑哭
+  </String>
+  <String id="FACE_TOOL_TIP57">
+    doge
+  </String>
+  <String id="FACE_TOOL_TIP58">
+    泪奔
+  </String>
+  <String id="FACE_TOOL_TIP59">
+    无奈
+  </String>
+  <String id="FACE_TOOL_TIP60">
+    托腮
+  </String>
+  <String id="FACE_TOOL_TIP61">
+    卖萌
+  </String>
+  <String id="FACE_TOOL_TIP62">
+    斜眼笑
+  </String>
+  <String id="FACE_TOOL_TIP63">
+    喷血
+  </String>
+  <String id="FACE_TOOL_TIP64">
+    惊喜
+  </String>
+  <String id="FACE_TOOL_TIP65">
+    骚扰
+  </String>
+  <String id="FACE_TOOL_TIP66">
+    小纠结
+  </String>
+  <String id="FACE_TOOL_TIP67">
+    我最美
+  </String>
+  <String id="FACE_TOOL_TIP68">
+    菜刀
+  </String>
+  <String id="FACE_TOOL_TIP69">
+    西瓜
+  </String>
+  <String id="FACE_TOOL_TIP70">
+    啤酒
+  </String>
+  <String id="FACE_TOOL_TIP71">
+    篮球
+  </String>
+  <String id="FACE_TOOL_TIP72">
+    乒乓
+  </String>
+  <String id="FACE_TOOL_TIP73">
+    茶
+  </String>
+  <String id="FACE_TOOL_TIP74">
+    咖啡
+  </String>
+  <String id="FACE_TOOL_TIP75">
+    饭
+  </String>
+  <String id="FACE_TOOL_TIP76">
+    猪头
+  </String>
+  <String id="FACE_TOOL_TIP77">
+    玫瑰
+  </String>
+  <String id="FACE_TOOL_TIP78">
+    凋谢
+  </String>
+  <String id="FACE_TOOL_TIP79">
+    示爱
+  </String>
+  <String id="FACE_TOOL_TIP80">
+    爱心
+  </String>
+  <String id="FACE_TOOL_TIP81">
+    心碎
+  </String>
+  <String id="FACE_TOOL_TIP82">
+    蛋糕
+  </String>
+  <String id="FACE_TOOL_TIP83">
+    闪电
+  </String>
+  <String id="FACE_TOOL_TIP84">
+    炸弹
+  </String>
+  <String id="FACE_TOOL_TIP85">
+    刀
+  </String>
+  <String id="FACE_TOOL_TIP86">
+    足球
+  </String>
+  <String id="FACE_TOOL_TIP87">
+    瓢虫
+  </String>
+  <String id="FACE_TOOL_TIP88">
+    便便
+  </String>
+  <String id="FACE_TOOL_TIP89">
+    月亮
+  </String>
+  <String id="FACE_TOOL_TIP90">
+    太阳
+  </String>
+  <String id="FACE_TOOL_TIP91">
+    礼物
+  </String>
+  <String id="FACE_TOOL_TIP92">
+    拥抱
+  </String>
+  <String id="FACE_TOOL_TIP93">
+    强
+  </String>
+  <String id="FACE_TOOL_TIP94">
+    弱
+  </String>
+  <String id="FACE_TOOL_TIP95">
+    握手
+  </String>
+  <String id="FACE_TOOL_TIP96">
+    胜利
+  </String>
+  <String id="FACE_TOOL_TIP97">
+    抱拳
+  </String>
+  <String id="FACE_TOOL_TIP98">
+    勾引
+  </String>
+  <String id="FACE_TOOL_TIP99">
+    拳头
+  </String>
+  <String id="FACE_TOOL_TIP100">
+    差劲
+  </String>
+  <String id="FACE_TOOL_TIP101">
+    爱你
+  </String>
+  <String id="FACE_TOOL_TIP102">
+    NO
+  </String>
+  <String id="FACE_TOOL_TIP103">
+    OK
+  </String>
+  <String id="FACE_TOOL_TIP104">
+    爱情
+  </String>
+  <String id="FACE_TOOL_TIP105">
+    飞吻
+  </String>
+  <String id="FACE_TOOL_TIP106">
+    跳跳
+  </String>
+  <String id="FACE_TOOL_TIP107">
+    发抖
+  </String>
+  <String id="FACE_TOOL_TIP108">
+    怄火
+  </String>
+  <String id="FACE_TOOL_TIP109">
+    转圈
+  </String>
+  <String id="FACE_TOOL_TIP110">
+    磕头
+  </String>
+  <String id="FACE_TOOL_TIP111">
+    回头
+  </String>
+  <String id="FACE_TOOL_TIP112">
+    跳绳
+  </String>
+  <String id="FACE_TOOL_TIP113">
+    挥手
+  </String>
+  <String id="FACE_TOOL_TIP114">
+    激动
+  </String>
+  <String id="FACE_TOOL_TIP115">
+    街舞
+  </String>
+  <String id="FACE_TOOL_TIP116">
+    献吻
+  </String>
+  <String id="FACE_TOOL_TIP117">
+    左太极
+  </String>
+  <String id="FACE_TOOL_TIP118">
+    右太极
+  </String>
+  <String id="FACE_TOOL_TIP119">
+    双喜
+  </String>
+  <String id="FACE_TOOL_TIP120">
+    鞭炮
+  </String>
+  <String id="FACE_TOOL_TIP121">
+    灯笼
+  </String>
+  <String id="FACE_TOOL_TIP122">
+    K歌
+  </String>
+  <String id="FACE_TOOL_TIP123">
+    喝彩
+  </String>
+  <String id="FACE_TOOL_TIP124">
+    祈祷
+  </String>
+  <String id="FACE_TOOL_TIP125">
+    爆筋
+  </String>
+  <String id="FACE_TOOL_TIP126">
+    棒棒糖
+  </String>
+  <String id="FACE_TOOL_TIP127">
+    喝奶
+  </String>
+  <String id="FACE_TOOL_TIP128">
+    飞机
+  </String>
+  <String id="FACE_TOOL_TIP129">
+    钞票
+  </String>
+  <String id="FACE_TOOL_TIP130">
+    药
+  </String>
+  <String id="FACE_TOOL_TIP131">
+    手枪
+  </String>
+  <String id="FACE_TOOL_TIP132">
+    蛋
+  </String>
+  <String id="FACE_TOOL_TIP133">
+    红包
+  </String>
+  <String id="FACE_TOOL_TIP134">
+    河蟹
+  </String>
+  <String id="FACE_TOOL_TIP135">
+    羊驼
+  </String>
+  <String id="FACE_TOOL_TIP136">
+    菊花
+  </String>
+  <String id="FACE_TOOL_TIP137">
+    肥皂
+  </String>
+  <String id="FACE_TOOL_TIP138">
+    马赛克
+  </String>
+  <String id="FACE_TOOL_TIP139">
+    栗子
+  </String>
+  <String id="FACE_TOOL_TIP140">
+    幽灵
+  </String>
+  <String id="FACE_TOOL_TIP141">
+    大笑
+  </String>
+  <String id="FACE_TOOL_TIP142">
+    不开心
+  </String>
+  <String id="FACE_TOOL_TIP143">
+    啊
+  </String>
+  <String id="FACE_TOOL_TIP144">
+    冷汗
+  </String>
+  <String id="FACE_TOOL_TIP145">
+    冷漠
+  </String>
+  <String id="FACE_TOOL_TIP146">
+    哇哦
+  </String>
+  <String id="FACE_TOOL_TIP147">
+    呃
+  </String>
+  <String id="FACE_TOOL_TIP148">
+    好棒
+  </String>
+  <String id="FACE_TOOL_TIP149">
+    拜托
+  </String>
+  <String id="FACE_TOOL_TIP150">
+    点赞
+  </String>
+  <String id="FACE_TOOL_TIP151">
+    无聊
+  </String>
+  <String id="FACE_TOOL_TIP152">
+    托脸
+  </String>
+  <String id="FACE_TOOL_TIP153">
+    吃
+  </String>
+  <String id="FACE_TOOL_TIP154">
+    送花
+  </String>
+  <String id="FACE_TOOL_TIP155">
+    害怕
+  </String>
+  <String id="FACE_TOOL_TIP156">
+    花痴
+  </String>
+  <String id="FACE_TOOL_TIP157">
+    小样儿
+  </String>
+  <String id="FACE_TOOL_TIP158">
+    脸红
+  </String>
+  <String id="FACE_TOOL_TIP159">
+    飙泪
+  </String>
+  <String id="FACE_TOOL_TIP160">
+    我不看
+  </String>
+  <String id="FACE_TOOL_TIP161">
+    风车
+  </String>
+  <String id="FACE_TOOL_TIP162">
+    下面
+  </String>
+  <String id="FACE_TOOL_TIP163">
+    青蛙
+  </String>
+  <String id="FACE_TOOL_TIP164">
+    彩球
+  </String>
+  <String id="FACE_TOOL_TIP165">
+    熊猫
+  </String>
+  <String id="FACE_TOOL_TIP166">
+    高铁左车头
+  </String>
+  <String id="FACE_TOOL_TIP167">
+    香蕉
+  </String>
+  <String id="FACE_TOOL_TIP168">
+    下雨
+  </String>
+  <String id="FACE_TOOL_TIP169">
+    纸巾
+  </String>
+  <String id="FACE_TOOL_TIP170">
+    开车
+  </String>
+  <String id="FACE_TOOL_TIP171">
+    发财
+  </String>
+  <String id="FACE_TOOL_TIP172">
+    打伞
+  </String>
+  <String id="FACE_TOOL_TIP173">
+    帅
+  </String>
+  <String id="FACE_TOOL_TIP174">
+    钻戒
+  </String>
+  <String id="FACE_TOOL_TIP175">
+    闹钟
+  </String>
+  <String id="FACE_TOOL_TIP176">
+    灯泡
+  </String>
+  <String id="FACE_TOOL_TIP177">
+    沙发
+  </String>
+  <String id="FACE_TOOL_TIP178">
+    多云
+  </String>
+  <String id="FACE_TOOL_TIP179">
+    购物
+  </String>
+  <String id="FACE_TOOL_TIP180">
+    邮件
+  </String>
+  <String id="FACE_TOOL_TIP181">
+    车厢
+  </String>
+  <String id="FACE_TOOL_TIP182">
+    高铁右车头
+  </String>
+  <String id="FACE_TOOL_TIP183">
+    招财进宝
+  </String>
+  <String id="FACE_TOOL_TIP184">
+    非典
+  </String>
+  <String id="FACE_TOOL_TIP185">
+    闪人
+  </String>
+  <String id="FACE_TOOL_TIP186">
+    找
+  </String>
+  <String id="FACE_TOOL_TIP187">
+    美眉
+  </String>
+  <String id="FACE_TOOL_TIP188">
+    猫咪
+  </String>
+  <String id="FACE_TOOL_TIP189">
+    小狗
+  </String>
+  <String id="FACE_TOOL_TIP190">
+    钱
+  </String>
+  <String id="FACE_TOOL_TIP191">
+    灯泡
+  </String>
+  <String id="FACE_TOOL_TIP192">
+    酒杯
+  </String>
+  <String id="FACE_TOOL_TIP193">
+    音乐
+  </String>
+  <String id="FACE_TOOL_TIP194">
+    药丸
+  </String>
+  <String id="FACE_TOOL_TIP195">
+    吻
+  </String>
+  <String id="FACE_TOOL_TIP196">
+    会议
+  </String>
+  <String id="FACE_TOOL_TIP197">
+    电话
+  </String>
+  <String id="FACE_TOOL_TIP198">
+    时间
+  </String>
+  <String id="FACE_TOOL_TIP199">
+    邮件
+  </String>
+  <String id="FACE_TOOL_TIP200">
+    电视
+  </String>
+  <String id="FACE_TOOL_TIP201">
+    多多
+  </String>
+  <String id="FACE_TOOL_TIP202">
+    美女
+  </String>
+  <String id="FACE_TOOL_TIP203">
+    汉良
+  </String>
+  <String id="FACE_TOOL_TIP204">
+    毛毛
+  </String>
+  <String id="FACE_TOOL_TIP205">
+    Q仔
+  </String>
+  <String id="FACE_TOOL_TIP206">
+    白酒
+  </String>
+  <String id="FACE_TOOL_TIP207">
+    汽水
+  </String>
+  <String id="FACE_TOOL_TIP208">
+    下雨
+  </String>
+  <String id="FACE_TOOL_TIP209">
+    多云
+  </String>
+  <String id="FACE_TOOL_TIP210">
+    雪人
+  </String>
+  <String id="FACE_TOOL_TIP211">
+    星星
+  </String>
+  <String id="FACE_TOOL_TIP212">
+    女
+  </String>
+  <String id="FACE_TOOL_TIP213">
+    男
+  </String>
+  </root>

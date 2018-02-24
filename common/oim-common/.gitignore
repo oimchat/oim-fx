@@ -1,0 +1,30 @@
+*.class
+/bin
+/logs
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+
+# Eclipse #
+.settings
+.classpath
+.project
+.myeclipse
+
+# Maven #
+/target/
+
+
+# IntelliJ #
+*.iml
+.idea
+
+
+# NetBeans #
+nbproject
+build
+build.xml
+manifest.mf

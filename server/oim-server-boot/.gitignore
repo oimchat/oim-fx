@@ -1,0 +1,35 @@
+
+/.apt_generated/
+*.class
+/db
+/logs
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+
+# Eclipse #
+.factorypath
+.settings
+.classpath
+.project
+.myeclipse
+
+# Maven #
+/target/
+
+
+# IntelliJ #
+*.iml
+.idea
+
+
+# NetBeans #
+nbproject
+build
+build.xml
+manifest.mf
+
+# OIM #

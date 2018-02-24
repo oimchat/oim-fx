@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+	<space name="user">
+	
+		<query name="getUserByAccount" type="sql">
+            <content>
+                <![CDATA[
+                    select * from im_user u where account=:account
+                ]]>
+            </content>
+        </query>
+        
+        <query name="getUserAllCount" type="sql">
+            <content>
+                <![CDATA[
+                    select count(1) from im_user 
+                ]]>
+            </content>
+        </query>
+        
+        <query name="getUserIdByAccount" type="sql">
+            <content>
+                <![CDATA[
+                    select id from im_user where account=:account
+                ]]>
+            </content>
+        </query>
+        
+		<query name="getUserDataById" type="sql">
+			<resultList>
+				<result column="id" type="string" />
+				<result column="number" type="int" />
+                <result column="account" type="string" />
+                <result column="email" type="string" />
+                <result column="mobile" type="string" />
+                <result column="signature" type="string" />
+                <result column="head" type="string" />
+                <result column="headType" type="string" />
+                <result column="nickname" type="string" />
+                <result column="name" type="string" />
+                <result column="spell" type="string" />
+                <result column="gender" type="string" />
+                <result column="telephone" type="string" />
+                <result column="QQ" type="string" />
+                <result column="nation" type="string" />
+                <result column="birthdate" type="string" />
+                <result column="age" type="integer" />
+                <result column="homeAddress" type="string" />
+                <result column="locationAddress" type="string" />
+                <result column="introduce" type="string" />
+                <result column="remark" type="string" />
+            </resultList>
+            <content>
+                <![CDATA[
+                    select  u.id,
+							u.number,
+							u.account,
+							u.email,
+							u.mobile,
+							u.signature,
+							u.head,
+							u.headType,
+							u.nickname,
+							u.name,
+							u.spell,
+							u.simpleSpell,
+							u.gender,
+							u.telephone,
+							u.QQ,
+							u.nation,
+							u.birthdate,
+							u.age,
+							u.nativePlace,
+							u.homeAddress,
+							u.locationAddress,
+							u.introduce,
+							u.remark
+                    from im_user u
+                    where id=:id
+                ]]>
+            </content>
+        </query>
+        
+		<!-- 条件查询用户列表 -->
+		<query name="queryUserList" type="sql">
+			<resultList>
+				<result column="id" type="string" />
+				<result column="number" type="int" />
+                <result column="account" type="string" />
+                <result column="email" type="string" />
+                <result column="mobile" type="string" />
+                <result column="signature" type="string" />
+                <result column="head" type="string" />
+                <result column="headType" type="string" />
+                <result column="nickname" type="string" />
+                <result column="name" type="string" />
+                <result column="spell" type="string" />
+                <result column="gender" type="string" />
+                <result column="telephone" type="string" />
+                <result column="QQ" type="string" />
+                <result column="nation" type="string" />
+                <result column="birthdate" type="string" />
+                <result column="age" type="integer" />
+                <result column="homeAddress" type="string" />
+                <result column="locationAddress" type="string" />
+                <result column="introduce" type="string" />
+                <result column="remark" type="string" />
+            </resultList>
+            <content>
+                <![CDATA[
+                    select  u.id,
+							u.number,
+							u.account,
+							u.email,
+							u.mobile,
+							u.signature,
+							u.head,
+							u.headType,
+							u.nickname,
+							u.name,
+							u.spell,
+							u.simpleSpell,
+							u.gender,
+							u.telephone,
+							u.QQ,
+							u.nation,
+							u.birthdate,
+							u.age,
+							u.nativePlace,
+							u.homeAddress,
+							u.locationAddress,
+							u.introduce,
+							u.remark
+                    from im_user u
+                    where 1=1
+                    
+                    <#if queryText?? && ''!=queryText>
+		                and ( u.account like :queryText or u.nickname like :queryText )
+		            </#if>
+		            
+		            <#if name?? && ''!=name>
+		            	and  u.name like :name 
+		            </#if>
+		            
+		            <#if account?? && ''!=account>
+		            	and u.account = :account
+		            </#if>
+		            
+		            <#if nickname?? && ''!=nickname>
+		            	and u.nickname like :nickname
+		            </#if>
+		            
+		            <#if age?? && ''!=age>
+		            	and u.age = :age
+		            </#if>
+		            
+		            <#if constellation?? && ''!=constellation>
+		            	and u.constellation = :constellation
+		            </#if>
+		            
+		            <#if blood?? && ''!=blood>
+		            	and u.blood = :blood
+		            </#if>
+		            
+		            <#if startBirthdate?? && ''!=startBirthdate>
+		            	and u.birthdate >= :startBirthdate
+		            </#if>
+		            
+		            <#if endBirthdate?? && ''!=endBirthdate>
+		            	and u.birthdate <= :endBirthdate
+		            </#if>
+		            
+		            <#if gender?? && ''!=gender>
+		            	and u.gender = :gender
+		            </#if>
+                ]]>
+                order by id
+            </content>
+        </query>
+        
+        <!-- 根据分组所属的用户id，获取用户分组中的所有成员 -->
+        <query name="getUserCategoryMemberUserDataList" type="sql">
+			<resultList>
+				<result column="id" type="string" />
+				<result column="number" type="int" />
+                <result column="account" type="string" />
+                <result column="email" type="string" />
+                <result column="mobile" type="string" />
+                <result column="signature" type="string" />
+                <result column="head" type="string" />
+                <result column="headType" type="string" />
+                <result column="nickname" type="string" />
+                <result column="name" type="string" />
+                <result column="spell" type="string" />
+                <result column="gender" type="string" />
+                <result column="telephone" type="string" />
+                <result column="QQ" type="string" />
+                <result column="nation" type="string" />
+                <result column="birthdate" type="string" />
+                <result column="age" type="integer" />
+                <result column="homeAddress" type="string" />
+                <result column="locationAddress" type="string" />
+                <result column="introduce" type="string" />
+                <result column="remark" type="string" />
+            </resultList>
+            <content>
+                <![CDATA[
+                    select  u.id,
+							u.number,
+							u.account,
+							u.email,
+							u.mobile,
+							u.signature,
+							u.head,
+							u.headType,
+							u.nickname,
+							u.name,
+							u.spell,
+							u.simpleSpell,
+							u.gender,
+							u.telephone,
+							u.QQ,
+							u.nation,
+							u.birthdate,
+							u.age,
+							u.nativePlace,
+							u.homeAddress,
+							u.locationAddress,
+							u.introduce,
+							u.remark
+                    from im_user u
+                    where 1=1
+                    and exists
+                    (   select ucm.memberUserId 
+                    	from im_user_category_member ucm
+                    	where ucm.memberUserId=u.id
+                    	and ucm.ownUserId=:userId
+                    )
+                ]]>
+            </content>
+        </query>
+        <!-- 根据群id，获取所有成员 -->
+        <query name="getGroupMemberUserDataListByGroupId" type="sql">
+			<resultList>
+				<result column="id" type="string" />
+				<result column="number" type="int" />
+                <result column="account" type="string" />
+                <result column="email" type="string" />
+                <result column="mobile" type="string" />
+                <result column="signature" type="string" />
+                <result column="head" type="string" />
+                <result column="headType" type="string" />
+                <result column="nickname" type="string" />
+                <result column="name" type="string" />
+                <result column="spell" type="string" />
+                <result column="gender" type="string" />
+                <result column="telephone" type="string" />
+                <result column="QQ" type="string" />
+                <result column="nation" type="string" />
+                <result column="birthdate" type="string" />
+                <result column="age" type="integer" />
+                <result column="homeAddress" type="string" />
+                <result column="locationAddress" type="string" />
+                <result column="introduce" type="string" />
+                <result column="remark" type="string" />
+            </resultList>
+            <content>
+                <![CDATA[
+                    select  u.id,
+							u.number,
+							u.account,
+							u.email,
+							u.mobile,
+							u.signature,
+							u.head,
+							u.headType,
+							u.nickname,
+							u.name,
+							u.spell,
+							u.simpleSpell,
+							u.gender,
+							u.telephone,
+							u.QQ,
+							u.nation,
+							u.birthdate,
+							u.age,
+							u.nativePlace,
+							u.homeAddress,
+							u.locationAddress,
+							u.introduce,
+							u.remark
+                    from im_user u
+                    where 1=1
+                    and exists
+                    (   select gm.userId 
+                    	from im_group_member gm
+                    	where gm.userId=u.id
+                    	and gm.groupId =:groupId
+                    )
+                ]]>
+            </content>
+        </query>
+        
+        <!-- 根据用户id，获取他所加入或者拥有的群的所有成员 -->
+        <query name="getGroupMemberUserDataListByUserId" type="sql">
+			<resultList>
+				<result column="id" type="string" />
+				<result column="number" type="int" />
+                <result column="account" type="string" />
+                <result column="email" type="string" />
+                <result column="mobile" type="string" />
+                <result column="signature" type="string" />
+                <result column="head" type="string" />
+                <result column="headType" type="string" />
+                <result column="nickname" type="string" />
+                <result column="name" type="string" />
+                <result column="spell" type="string" />
+                <result column="gender" type="string" />
+                <result column="telephone" type="string" />
+                <result column="QQ" type="string" />
+                <result column="nation" type="string" />
+                <result column="birthdate" type="string" />
+                <result column="age" type="integer" />
+                <result column="homeAddress" type="string" />
+                <result column="locationAddress" type="string" />
+                <result column="introduce" type="string" />
+                <result column="remark" type="string" />
+            </resultList>
+            <content>
+                <![CDATA[
+                    select  u.id,
+							u.number,
+							u.account,
+							u.email,
+							u.mobile,
+							u.signature,
+							u.head,
+							u.headType,
+							u.nickname,
+							u.name,
+							u.spell,
+							u.simpleSpell,
+							u.gender,
+							u.telephone,
+							u.QQ,
+							u.nation,
+							u.birthdate,
+							u.age,
+							u.nativePlace,
+							u.homeAddress,
+							u.locationAddress,
+							u.introduce,
+							u.remark
+                    from im_user u
+                    where 1=1
+                    and exists
+                    (   select gm.userId 
+                    	from im_group_member gm
+                    	where gm.userId=u.id
+                    	and gm.groupId in
+                    	(
+                    	  select gcm.groupId from im_group_category_member gcm where gcm.userId=:userId
+                    	)
+                    )
+                ]]>
+            </content>
+        </query>
+
+        <query name="updateSelective" type="sql">
+			<content>
+                <![CDATA[
+                    update im_user set
+                    
+                    <#assign sql=""><#-- 定义一个变量"sql" -->
+                    
+                    <#if QQ?? && ''!=QQ>
+		                <#assign sql="${sql},QQ=:QQ">
+		            </#if>
+		            
+		            <#if homeAddress?? && ''!=homeAddress>
+		                <#assign sql="${sql},homeAddress=:homeAddress">
+		            </#if>
+		            
+		            <#if locationAddress?? && ''!=locationAddress>
+		                <#assign sql="${sql},locationAddress=:locationAddress">
+		            </#if>
+		            
+		            <#if age?? >
+		                <#assign sql="${sql},age=:age">
+		            </#if>
+		            
+		            <#if birthdate?? && ''!=birthdate>
+		               <#assign sql="${sql},birthdate=:birthdate">
+		            </#if>
+		            
+		            <#if cancelDateTime?? && ''!=cancelDateTime>
+		                <#assign sql="${sql},cancelDateTime=:cancelDateTime">
+		            </#if>
+		            
+		            <#if createDateTime?? && ''!=createDateTime>
+		                <#assign sql="${sql},createDateTime=:createDateTime">
+		            </#if>
+		            
+		            <#if education?? && ''!=education>
+		                <#assign sql="${sql},education=:education">
+		            </#if>
+		            
+		            <#if email?? && ''!=email>
+		                <#assign sql="${sql},email=:email">
+		            </#if>
+		            <#if gender?? && ''!=gender>
+		                <#assign sql="${sql},gender=:gender">
+		            </#if>
+		            
+		            <#if graduationDate?? && ''!=graduationDate>
+		                <#assign sql="${sql},graduationDate=:graduationDate">
+		            </#if>
+		            
+		            <#if head?? && ''!=head>
+		                <#assign sql="${sql},head=:head">
+		            </#if>
+		            
+					<#if headType?? && ''!=headType>
+		                <#assign sql="${sql},headType=:headType">
+		            </#if>
+		            
+		            <#if identityCard?? && ''!=identityCard>
+		                <#assign sql="${sql},identityCard=:identityCard">
+		            </#if>
+		            
+		            <#if maritalStatus?? && ''!=maritalStatus>
+		                <#assign sql="${sql},maritalStatus=:maritalStatus">
+		            </#if>
+		            
+		            <#if mark?? && ''!=mark>
+		                <#assign sql="${sql},mark=:mark">
+		            </#if>
+		            
+		            <#if mobile?? && ''!=mobile>
+		                <#assign sql="${sql},mobile=:mobile">
+		            </#if>
+		            
+		            <#if name?? && ''!=name>
+		                <#assign sql="${sql},name=:name">
+		            </#if>
+		            
+		            <#if nation?? && ''!=nation>
+		                <#assign sql="${sql},nation=:nation">
+		            </#if>
+		            
+		            <#if nativePlace?? && ''!=nativePlace>
+		                <#assign sql="${sql},nativePlace=:nativePlace">
+		            </#if>
+		            
+		            <#if password?? && ''!=password>
+		                <#assign sql="${sql},password=:password">
+		            </#if>
+		            
+		            <#if politicsStatus?? && ''!=politicsStatus>
+		                <#assign sql="${sql},politicsStatus=:politicsStatus">
+		            </#if>
+		            
+		            <#if privateKey?? && ''!=privateKey>
+		                <#assign sql="${sql},privateKey=:privateKey">
+		            </#if>
+		            
+		            <#if professional?? && ''!=professional>
+		                <#assign sql="${sql},professional=:professional">
+		            </#if>
+		            
+		            <#if remark?? && ''!=remark>
+		                <#assign sql="${sql},remark=:remark">
+		            </#if>
+		            
+		            <#if school?? && ''!=school>
+		                <#assign sql="${sql},school=:school">
+		            </#if>
+		            
+		            <#if simpleSpell?? && ''!=simpleSpell>
+		                <#assign sql="${sql},simpleSpell=:simpleSpell">
+		            </#if>
+		            
+		            <#if spell?? && ''!=spell>
+		                <#assign sql="${sql},spell=:spell">
+		            </#if>
+		            
+		            <#if telephone?? && ''!=telephone>
+		                <#assign sql="${sql},telephone=:telephone">
+		            </#if>
+		            
+		            <#if type?? && ''!=type>
+		                <#assign sql="${sql},type=:type">
+		            </#if>
+		            
+		            <#if workDate?? && ''!=workDate>
+		                <#assign sql="${sql},workDate=:workDate">
+		            </#if>
+		            
+		            <#if zipCode?? && ''!=zipCode>
+		                <#assign sql="${sql},zipCode=:zipCode">
+		            </#if>
+                    
+                    <#if sql?? && ''!=sql>
+                    	${sql?substring(1)}<#-- 截取掉最前面的"," -->
+                    </#if>
+                    where id = :id
+                ]]>
+			</content>
+		</query>
+    </space>
+</body>

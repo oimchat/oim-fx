@@ -1,0 +1,32 @@
+/*******************************************************************************
+ *                                                                             *
+ * WebView                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+  
+.scroll-bar > .thumb{
+    -fx-background-color: rgba(120.0,120.0,120.0,0.8);
+    -fx-background-radius: 5.0, 5.0, 5.0, 5.0, 5.0;
+}
+
+.scroll-bar > .thumb:hover{
+    -fx-background-color: rgba(90.0,90.0,90.0,0.8);
+    -fx-background-radius: 5.0, 5.0, 5.0, 5.0, 5.0;
+}
+
+.scroll-bar > .thumb:pressed{
+    -fx-background-color: rgba(70.0,70.0,70.0,0.8);
+    -fx-background-radius: 5.0, 5.0, 5.0, 5.0, 5.0;
+}
+
+
+.web-view >.scroll-bar:vertical {
+    -fx-background-color: rgba(250.0,250.0,250.0,1);
+}
+
+.web-view > .scroll-bar:vertical > .increment-button,
+.web-view > .scroll-bar:vertical > .decrement-button {
+    -fx-padding: 0.25em 0.25em 0.25em 0.166667em; /** 3 3 3 2 **/
+}
+
+

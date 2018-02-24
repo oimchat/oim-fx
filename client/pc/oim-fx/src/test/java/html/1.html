@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* bubble style */
+            .sender{
+                clear:both;
+            }
+            .sender div:nth-of-type(1){
+                float: left;
+            }
+            .sender div:nth-of-type(2){
+                background-color: aquamarine;
+                float: left;
+                margin: 0 20px 10px 15px;
+                padding: 10px 10px 10px 0px;
+                border-radius:7px;
+            }
+
+            .receiver div:first-child img,
+            .sender div:first-child img{
+                width:50px;
+                height: 50px;
+            }
+
+            .receiver{
+                clear:both;
+            }
+            .receiver div:nth-child(1){
+                float: right;
+            }
+            .receiver div:nth-of-type(2){
+                float:right;
+                background-color: gold;
+                margin: 0 10px 10px 20px;
+                padding: 10px 0px 10px 10px;
+                border-radius:7px;
+            }
+
+            .left_triangle{
+                height:0px;  
+                width:0px;  
+                border-width:8px;  
+                border-style:solid;  
+                border-color:transparent aquamarine transparent transparent;  
+                position: relative;
+                left:-16px;
+                top:3px;
+            }
+
+            .right_triangle{
+                height:0px;  
+                width:0px;  
+                border-width:8px;  
+                border-style:solid;  
+                border-color:transparent transparent transparent gold;  
+                position: relative;
+                right:-16px;
+                top:3px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- Left -->
+        <div class="sender">
+            <div>
+                <img src="images/head/175.png" alt=""/>
+            </div>
+            <div>
+                <div class="left_triangle"></div>
+                <span> hello, man! </span>
+            </div>
+        </div>
+        <!-- Right -->
+        <div class="receiver">
+            <div>
+                <img src="images/head/175.png" alt=""/>
+            </div>
+            <div>
+                <div class="right_triangle"></div>
+                <span> hello world </span>
+            </div>
+        </div>  
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.only</groupId>
+    <artifactId>oim-client-resources</artifactId>
+    <version>1.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>oim-client-resources</name>
+    <url>https://gitee.com/onlysoftware/oim-fx</url>
+
+    <properties>
+        <!-- plugin的属性定义 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.7</jdk.version>
+    </properties>
+
+	<repositories>
+		<repository>
+			<id>com.only</id>
+			<url>https://raw.githubusercontent.com/onlyxiahui/maven/master/repository</url>
+		</repository>
+	</repositories>
+	
+    <dependencies>
+    </dependencies>
+    
+    <build>
+        <finalName>oim-client-resources</finalName>
+        <plugins>
+			<!-- clean插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+            
+            <!-- 忽略 junit测试 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            
+            <!-- compiler插件, 设定JDK版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>UTF8</encoding>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+            
+            <!-- resource插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+			</plugin>
+
+			<!-- source插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase><!-- 要绑定到的生命周期的阶段 在verify之后，install之前执行下面指定的goal -->
+						<goals>
+							<goal>jar-no-fork</goal><!-- 类似执行mvn source:jar -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<!-- install插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+			</plugin>
+
+			<!-- dependency插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.0.2</version>
+			</plugin>
+        </plugins>
+    </build>
+</project>

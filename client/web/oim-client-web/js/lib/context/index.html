@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=gb2312">
+		<meta http-equiv="X-UA-Compatible" content="IE=8" >
+		<title>jQuery右键菜单插件context.js - 站长素材</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/demo.css">
+		
+		<link rel="stylesheet" type="text/css" href="context.standalone.css">
+		
+	</head>
+	<body>
+		<h1>context.js</h1>
+		
+		<div id="download">Right Click to Demo <span class="amp">&amp;</span> Download</div>
+		
+		<div class="description">
+			
+			<h2>About</h2>
+			<p>ContextJS is a lightweight solution for contextual menus. Currently, there are two versions.</p> <p>The first is to be used <i>with</i> Twitters Bootstrap  (bootstrap.css specifically). If you do not use or want to use bootstrap.css, there is a standalone stylesheet to give the menu it's base styles.</p>
+			
+			<h2>Features</h2>
+			
+			<ul>
+				<li>Linted: Valid JS</li>
+				<li>Can be used with or without Twitters Bootstrap.css</li>
+				<li>Event Based Links</li>
+				<li>Anchor Links</li>
+				<li>Headers</li>
+				<li>Dividers</li>
+				<li>Recursive Menus (infinite depth)</li>
+				<li>Vertical Space Detection (turns into a "dropup")</li>
+				<li>Horizontal Space Detection (Drops to the left instead of right)</li>
+				<li>Add/Delete menus Dynamically</li>
+				
+			</ul>
+			
+			<h2>Public API</h2>
+			
+			<h3>Initializing</h3>
+			<pre>context.init({
+    fadeSpeed: 100,
+    filter: function ($obj){},
+    above: 'auto',
+    preventDoubleContext: true,
+    compress: false
+});</pre>
+
+			<table border="1" cellpadding="6">
+				<thead>
+					<tr>
+						<th>Paramater</th>
+						<th>Type</th>
+						<th>Default</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>fadeSpeed</td>
+						<td>int</td>
+						<td>100</td>
+						<td>The speed in which the context menu fades in (in milliseconds)</td>
+					</tr>
+					<tr>
+						<td>filter</td>
+						<td>function</td>
+						<td>null</td>
+						<td>Function that each finished list element will pass through for extra modification.</td>
+					</tr>
+					<tr>
+						<td>above</td>
+						<td>string || boolean</td>
+						<td>'auto'</td>
+						<td>If set to 'auto', menu will appear as a "dropup" if there is not enough room below it. Settings to true will make the menu a "popup" by default.</td>
+					</tr>
+					<tr>
+						<td>preventDoubleContext</td>
+						<td>boolean</td>
+						<td>true</td>
+						<td>If set to true, browser-based context menus will not work on contextjs menus.</td>
+					</tr>
+					<tr>
+						<td>compress</td>
+						<td>boolean</td>
+						<td>false</td>
+						<td>If set to true, context menus will have less padding, making them (hopefully) more unobtrusive</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Updating Settings</h3>
+			<pre>context.settings({initSettings});</pre>
+			
+			<table border="1" cellpadding="6">
+				<thead>
+					<tr>
+						<th>Paramater</th>
+						<th>Type</th>
+						<th>Default</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>settings</td>
+						<td>object</td>
+						<td>null</td>
+						<td>The init settings can be placed in here to update context menus written to the DOM. Changing settings between attaching menus will give the menus their own options.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Attaching</h3>
+			<pre>context.attach('#download', [menuObjects]);</pre>
+			
+			<table border="1" cellpadding="6">
+				<thead>
+					<tr>
+						<th>Paramater</th>
+						<th>Type</th>
+						<th>Default</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>selector</td>
+						<td>string</td>
+						<td>null</td>
+						<td>The jQuery (or css) selector of the element you want to apply the context menu to</td>
+					</tr>
+					<tr>
+						<td>menuObjects</td>
+						<td>array</td>
+						<td>null</td>
+						<td>An array of objects that define the menus structure</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			
+			<h3>Destroying</h3>
+			<pre>context.destroy('#download');</pre>
+			
+			<table border="1" cellpadding="6">
+				<thead>
+					<tr>
+						<th>Paramater</th>
+						<th>Type</th>
+						<th>Default</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>selector</td>
+						<td>string</td>
+						<td>null</td>
+						<td>The jQuery (or css) selector of the element you want to remove the context menu from</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			
+			<h2>Menu Objects</h2>
+			
+			<h3>Headers</h3>
+			<pre>{
+	header: 'My Header Title'
+}</pre>
+			
+			<h3>Anchor Links</h3>
+			<pre>{
+	text: 'My Link Title', 
+	href: 'http://contextjs.com/', 
+	target: '_blank'
+}</pre>
+			
+			<h3>Dividers</h3>
+			<pre>{
+	divider: true
+}</pre>
+			
+			<h3>Event Based Actions</h3>
+			<pre>{
+    text: 'Event Based Link',
+    action: function(e){
+    	e.preventDefault();
+        alert('Do Something');
+    }
+}</pre>
+
+			<h3>Sub-Menus</h3>
+			<pre>{
+    text: 'My Sub-menu',
+    subMenu: [menuObjects]
+}</pre>
+			<h3>Tracking Links with Google Analytics</h3>
+			<pre>{
+	text: 'context.js', 
+	href: 'http://contextjs.com/context.js', 
+	target:'_blank', 
+	action: function(e){
+		_gaq.push(['_trackEvent', 'ContextJS Download', this.pathname, this.innerHTML]);
+	}
+}</pre>
+			
+			<h2>Changelog</h2>
+			
+			<h3>Version 1.0 (Initial Release)</h3>
+			<h3>Version 1.5</h3>
+			<ul>
+				<li>Added Initialize Options</li>
+				<li>Removal of Dropdown ID paramater</li>
+				<li>Added Event-based items</li>
+				<li>Added Headers</li>
+				<li>Added Recursive Menus</li>
+				<li>Vertical Space Detection</li>
+			</ul>
+			
+			<h3>Version 2.0</h3>
+			<ul>
+				<li>Refined Vertical Space Detection</li>
+				<li>Added Horizontal Space Detection</li>
+				<li>Added an optional standalone CSS file for use without bootstrap</li>
+				<li>Added preventDoubleContext parameter in the init function</li>
+				<li>Added target parameter to links</li>
+				<li>Fixed event bubbling (multi-level dropdowns in the DOM)</li>
+			</ul>
+			
+			<h3>Version 2.1</h3>
+			<ul>
+				<li>Added settings function</li>
+				<li>Added compressed code <span class="amp">&amp;</span> styles</li>
+				<li>Cleaned up context.js code</li>
+			</ul>
+			
+			<h3>Version 2.1.1</h3>
+			<ul>
+				<li>Fixed multiple menus becoming visible</li>
+				<li>Refined Support for IE7 <span class="amp">&amp;</span> IE8</li>
+			</ul>
+			
+			<h2>Notes</h2>
+			<ul>
+				<li>Stray trailing commas are disliked by IE. Make sure when creating your menu, you take that into account, elsewise, you will get the <code>SCRIPT5007: Unable to get value of the property</code> error.</li>
+			</ul>
+			
+			
+			
+			
+		</div>
+		
+		
+		
+
+		
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="context.js"></script>
+		
+		
+		
+		<script src="js/demo.js"></script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗.</p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>

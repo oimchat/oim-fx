@@ -1,0 +1,17 @@
+{
+    "head": {
+        "key": "59847b79-159f-45e3-881e-041964187d9c",
+        "name": "",
+        "action": "1.100",
+        "method": "1.1.0001",
+        "version": "1",
+        "time": 1519357308589
+    },
+    "body": {
+        "loginData": {
+            "account": "10001",
+            "password": "e10adc3949ba59abbe56e057f20f883e",
+            "status": "1"
+        }
+    }
+}

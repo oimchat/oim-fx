@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+	<space name="user">
+	
+		<query name="getUserByAccount" type="sql">
+            <content>
+                <![CDATA[
+                    select * from im_user u where account=:account limit 0,1
+                ]]>
+            </content>
+        </query>
+        
+        <query name="getUserAllCount" type="sql">
+            <content>
+                <![CDATA[
+                    select count(1) from im_user 
+                ]]>
+            </content>
+        </query>
+        
+        <query name="getUserIdByAccount" type="sql">
+            <content>
+                <![CDATA[
+                    select id from im_user where account=:account limit 0,1
+                ]]>
+            </content>
+        </query>
+        
+		<query name="getUserDataById" type="sql">
+            <content>
+                <![CDATA[
+                    select  *
+                    from im_user u
+                    where id=:id limit 0,1
+                ]]>
+            </content>
+        </query>
+        
+		<!-- 条件查询用户列表 -->
+		<query name="queryUserList" type="sql">
+            <content>
+                <![CDATA[
+                    select  u.*
+                    from im_user u
+                    where 1=1
+                    
+                    <#if queryText?? && ''!=queryText>
+		                and ( u.account like :queryText or u.nickname like :queryText )
+		            </#if>
+		            
+		            <#if name?? && ''!=name>
+		            	and  u.name like :name 
+		            </#if>
+		            
+		            <#if account?? && ''!=account>
+		            	and u.account = :account
+		            </#if>
+		            
+		            <#if nickname?? && ''!=nickname>
+		            	and u.nickname like :nickname
+		            </#if>
+		            
+		            <#if age?? && ''!=age>
+		            	and u.age = :age
+		            </#if>
+		            
+		            <#if constellation?? && ''!=constellation>
+		            	and u.constellation = :constellation
+		            </#if>
+		            
+		            <#if blood?? && ''!=blood>
+		            	and u.blood = :blood
+		            </#if>
+		            
+		            <#if startBirthdate?? && ''!=startBirthdate>
+		            	and u.birthdate >= :startBirthdate
+		            </#if>
+		            
+		            <#if endBirthdate?? && ''!=endBirthdate>
+		            	and u.birthdate <= :endBirthdate
+		            </#if>
+		            
+		            <#if gender?? && ''!=gender>
+		            	and u.gender = :gender
+		            </#if>
+		            
+		            <#if homeAddress?? && ''!=homeAddress>
+		            	and u.homeAddress like :homeAddress
+		            </#if>
+		            
+		            <#if locationAddress?? && ''!=locationAddress>
+		            	and u.locationAddress like :locationAddress
+		            </#if>
+                ]]>
+                order by id
+            </content>
+        </query>
+        
+        <!-- 根据分组所属的用户id，获取用户分组中的所有成员 -->
+        <query name="getUserCategoryMemberUserDataList" type="sql">
+            <content>
+                <![CDATA[
+                select
+					u.*
+				from
+					im_user u
+				left join im_user_category_member ucm on ucm.memberUserId = u.id
+				where
+					1 = 1
+				and ucm.ownUserId = :userId
+
+                ]]>
+            </content>
+        </query>
+        <!-- 根据群id，获取所有成员 -->
+        <query name="getGroupMemberUserDataListByGroupId" type="sql">
+			
+            <content>
+                <![CDATA[
+                
+                select
+						u.*
+					from
+						im_user u 
+					left join im_group_member gm on gm.userId = u.id
+					where
+						1 = 1
+					and gm.groupId = :groupId
+                    
+                ]]>
+            </content>
+        </query>
+        
+        <!-- 根据用户id，获取他所加入或者拥有的群的所有成员 -->
+        <query name="getGroupMemberUserDataListByUserId" type="sql">
+            <content>
+                <![CDATA[
+                select
+						u.*
+					from
+						im_user u
+					where
+						1 = 1
+					and u.id in (
+						select
+							gm.userId
+						from
+							im_group_member gm
+						where
+							gm.groupId in (
+								select
+									gcm.groupId
+								from
+									im_group_category_member gcm
+								where
+									gcm.userId=:userId
+							)
+					)
+                ]]>
+            </content>
+        </query>
+
+        <query name="updateSelective" type="sql">
+			<content>
+                <![CDATA[
+                    update im_user set
+                    
+                    <#assign sql=""><#-- 定义一个变量"sql" -->
+           
+                    <#if QQ?? && ''!=QQ>
+		                <#assign sql="${sql},QQ=:QQ">
+		            </#if>
+		            
+		            <#if nickname?? && ''!=nickname>
+		                <#assign sql="${sql},nickname=:nickname">
+		            </#if>
+		            
+		            <#if homeAddress?? && ''!=homeAddress>
+		                <#assign sql="${sql},homeAddress=:homeAddress">
+		            </#if>
+		            
+		            <#if locationAddress?? && ''!=locationAddress>
+		                <#assign sql="${sql},locationAddress=:locationAddress">
+		            </#if>
+		            
+		            <#if age?? && 0!=age>
+		                <#assign sql="${sql},age=:age">
+		            </#if>
+		            
+		            <#if birthdate?? >
+		               <#assign sql="${sql},birthdate=:birthdate">
+		            </#if>
+		            
+		            <#if cancelTime?? >
+		                <#assign sql="${sql},cancelTime=:cancelTime">
+		            </#if>
+		            
+		            <#if education?? && ''!=education>
+		                <#assign sql="${sql},education=:education">
+		            </#if>
+		            
+		            <#if email?? && ''!=email>
+		                <#assign sql="${sql},email=:email">
+		            </#if>
+		            <#if gender?? && ''!=gender>
+		                <#assign sql="${sql},gender=:gender">
+		            </#if>
+		            
+		            <#if graduationDate??>
+		                <#assign sql="${sql},graduationDate=:graduationDate">
+		            </#if>
+		            
+		            <#if head?? && ''!=head>
+		                <#assign sql="${sql},head=:head">
+		            </#if>
+
+		            <#if identityCard?? && ''!=identityCard>
+		                <#assign sql="${sql},identityCard=:identityCard">
+		            </#if>
+		            
+		            <#if maritalStatus?? && ''!=maritalStatus>
+		                <#assign sql="${sql},maritalStatus=:maritalStatus">
+		            </#if>
+		            
+		            <#if mark?? && ''!=mark>
+		                <#assign sql="${sql},mark=:mark">
+		            </#if>
+		            
+		            <#if mobile?? && ''!=mobile>
+		                <#assign sql="${sql},mobile=:mobile">
+		            </#if>
+		            
+		            <#if name?? && ''!=name>
+		                <#assign sql="${sql},name=:name">
+		            </#if>
+		            
+		            <#if nation?? && ''!=nation>
+		                <#assign sql="${sql},nation=:nation">
+		            </#if>
+		            
+		            <#if nativePlace?? && ''!=nativePlace>
+		                <#assign sql="${sql},nativePlace=:nativePlace">
+		            </#if>
+		            
+		            <#if password?? && ''!=password>
+		                <#assign sql="${sql},password=:password">
+		            </#if>
+		            
+		            <#if politicsStatus?? && ''!=politicsStatus>
+		                <#assign sql="${sql},politicsStatus=:politicsStatus">
+		            </#if>
+		            
+		            <#if privateKey?? && ''!=privateKey>
+		                <#assign sql="${sql},privateKey=:privateKey">
+		            </#if>
+		            
+		            <#if professional?? && ''!=professional>
+		                <#assign sql="${sql},professional=:professional">
+		            </#if>
+		            
+		            <#if remark?? && ''!=remark>
+		                <#assign sql="${sql},remark=:remark">
+		            </#if>
+		            
+		            <#if school?? && ''!=school>
+		                <#assign sql="${sql},school=:school">
+		            </#if>
+		            
+		            <#if simpleSpell?? && ''!=simpleSpell>
+		                <#assign sql="${sql},simpleSpell=:simpleSpell">
+		            </#if>
+		            
+		            <#if spell?? && ''!=spell>
+		                <#assign sql="${sql},spell=:spell">
+		            </#if>
+		            
+		            <#if telephone?? && ''!=telephone>
+		                <#assign sql="${sql},telephone=:telephone">
+		            </#if>
+		            
+		            <#if type?? && ''!=type>
+		                <#assign sql="${sql},type=:type">
+		            </#if>
+		            
+		            <#if workDate??>
+		                <#assign sql="${sql},workDate=:workDate">
+		            </#if>
+		            
+		            <#if zipCode?? && ''!=zipCode>
+		                <#assign sql="${sql},zipCode=:zipCode">
+		            </#if>
+		            
+		            <#if signature?? && ''!=signature>
+		                <#assign sql="${sql},signature=:signature">
+		            </#if>
+		            
+		            <#if introduce?? && ''!=introduce>
+		                <#assign sql="${sql},introduce=:introduce">
+		            </#if>
+                    
+                    <#if sql?? && ''!=sql>
+                    	${sql?substring(1)}<#-- 截取掉最前面的"," -->
+                    </#if>
+                    where id = :id
+                ]]>
+			</content>
+		</query>
+    </space>
+</body>

@@ -1,0 +1,201 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.only</groupId>
+	<artifactId>oim-server-boot</artifactId>
+	<version>1.0.1</version>
+	<packaging>jar</packaging>
+	<name>oim-server-boot</name>
+	<url>https://gitee.com/onlysoftware/oim-fx</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.8</jdk.version>
+	</properties>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.8.RELEASE</version>
+	</parent>
+
+	<dependencies>
+		<!-- only start -->
+		<dependency>
+			<groupId>com.only</groupId>
+			<artifactId>oim-server-api-core</artifactId>
+			<version>1.0.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-web</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-config</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.only</groupId>
+			<artifactId>oim-server-core</artifactId>
+			<version>1.0.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-web</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-config</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.only</groupId>
+			<artifactId>oim-server-file-core</artifactId>
+			<version>1.0.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-web</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-config</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.only</groupId>
+			<artifactId>oim-server-remote-core</artifactId>
+			<version>1.0.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-web</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-config</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- only end -->
+
+		<!-- spring-boot start -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> 
+			</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId> 
+			<optional>true</optional> </dependency> <dependency> <groupId>org.springframework.boot</groupId> 
+			<artifactId>spring-boot-starter-mail</artifactId> </dependency> <dependency> 
+			<groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-test</artifactId> 
+			<scope>test</scope> </dependency> -->
+		<!-- spring-boot end -->
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>oim-server-boot</finalName>
+		<plugins>
+			<!-- -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.main.StartupServer</mainClass>
+					<fork>true</fork>
+				</configuration>
+			</plugin> 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<compilerArguments>
+						<verbose />
+						<bootclasspath>${java.home}/lib/rt.jar</bootclasspath>
+					</compilerArguments>
+				</configuration>
+			</plugin>
+			<!-- The configuration of maven-assembly-plugin -->  
+            <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-assembly-plugin</artifactId>  
+                <!-- <version>2.4</version> -->  
+                <!-- The configuration of the plugin -->  
+                <configuration>  
+                    <!-- Specifies the configuration file of the assembly plugin -->  
+                    <descriptors>  
+                        <descriptor>src/main/assembly/package.xml</descriptor>  
+                    </descriptors>  
+                </configuration>  
+                <executions>  
+                    <execution>  
+                        <id>make-assembly</id>  
+                        <phase>package</phase>  
+                        <goals>  
+                            <goal>single</goal>  
+                        </goals>  
+                    </execution>  
+                </executions>  
+            </plugin>  
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>test</id>
+			<properties>
+				<environment>test</environment>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<environment>dev</environment>
+			</properties>
+		</profile>
+	</profiles>
+</project>

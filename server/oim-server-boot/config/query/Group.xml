@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+	<space name="group">
+		<query name="queryGroupList" type="sql">
+			
+            <content>
+                <![CDATA[
+                    select  g.*
+                    from im_group g
+                    where 1=1
+                    
+                    <#if queryText?? && ''!=queryText>
+		            	and (		
+		            		g.name like :queryText  or 
+		            		g.introduce like :queryText or 
+		            		g.publicNotice like :queryText
+                     	<#if number?? && ''!=number>
+                    		or g.number = :number 
+                		</#if>
+							)
+		            </#if>
+		            <#if classification?? && ''!=classification>
+						and g.classification = :classification
+					</#if>
+		            
+                ]]>
+                order by id
+            </content>
+        </query>
+    </space>
+</body>

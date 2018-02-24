@@ -1,0 +1,147 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-9-18, 15:13:11
+    Author     : Only
+*/
+
+.main {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.time{
+    margin: 7px 0;
+    text-align: center;
+    font-size: 13.3333px; 
+    white-space: pre;
+    font: Arial;
+    color: #cccccc;
+}
+
+.avatar {
+    border-radius: 3px;
+}
+.text {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    max-width: calc(100% - 40px);
+    min-height: 30px;
+    /*line-height: 2.5;*/
+    /*font-size: 9pt;*/
+    word-break: break-all;
+    border-radius: 4px;
+}
+
+/* .text:before {
+    content: " ";
+    position: absolute;
+    top: 9px;
+    right: 100%;
+    border: 6px solid transparent;
+    border-right-color: #fafafa;
+}*/
+
+
+
+.left {
+    text-align: left;
+}
+
+.left .name {
+    font-family:Microsoft YaHei;
+    font-size: 13px;
+    color: #cccccc;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 0px;
+}
+
+.left .avatar {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.left .text {
+    text-align: left;
+    background-color: #eee;
+}
+
+.left .text:before {
+    content: " ";
+    position: absolute;
+    top: 9px;
+    right: 100%;
+    border: 6px solid transparent;
+    border-right-color: #eee;
+}
+
+
+
+
+.right {
+    text-align: right;
+}
+
+.right .name {
+    font-family:Microsoft YaHei;
+    font-size: 13px;
+    color: #cccccc;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 0px;
+}
+
+.right .avatar {
+    float: right;
+    margin: 0 0 0 10px;
+}
+
+.right .text {
+    text-align: right;
+    background-color: #b2e281;
+}
+
+.right .text:before {
+
+    content: " ";
+    width: 10px;
+    position: absolute;
+    top: 9px;
+    border: 6px solid transparent;
+
+
+    right: inherit;
+    left: 100%;
+    border-right-color: transparent;
+    border-left-color: #b2e281;
+}
+
+
+
+.left-arrow{
+    height:0px;  
+    width:0px;  
+    border-width:8px;  
+    border-style:solid;  
+    border-color:transparent aquamarine transparent transparent;  
+    position: relative;
+    left:-16px;
+    top:3px;
+}
+
+.right-arrow{
+    height:0px;  
+    width:0px;  
+    border-width:8px;  
+    border-style:solid;  
+    border-color:transparent transparent transparent gold;  
+    position: relative;
+    right:-16px;
+    top:3px;
+}

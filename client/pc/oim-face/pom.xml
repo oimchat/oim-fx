@@ -1,0 +1,168 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.only</groupId>
+    <artifactId>oim-face</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>oim-face</name>
+    <url>https://gitee.com/onlysoftware/oim-fx</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.7</jdk.version>
+    </properties>
+
+    <dependencies>
+    </dependencies>
+    <build>
+		<finalName>oim-face</finalName>
+		<plugins>
+		
+			<!-- clean插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+			
+			<!-- 忽略Junit测试 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            
+			<!-- compiler插件, 设定JDK版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>UTF8</encoding>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+
+			<!-- resource插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+			</plugin>
+
+			<!-- source插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase><!-- 要绑定到的生命周期的阶段 在verify之后，install之前执行下面指定的goal -->
+						<goals>
+							<goal>jar-no-fork</goal><!-- 类似执行mvn source:jar -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- javadoc插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>UTF8</encoding>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<!-- 关掉JDK1.8的变态检查
+						<configuration>  
+			                <additionalparam>-Xdoclint:none</additionalparam>  
+			            </configuration>
+			             -->
+					</execution>
+				</executions>
+			</plugin> 
+			<!-- gpg signature -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-gpg-plugin</artifactId> 
+				<version>1.6</version> <executions> <execution> <id>sign-artifacts</id> <phase>verify</phase> 
+				<goals> <goal>sign</goal> </goals> </execution> </executions> </plugin> -->
+			
+			<!-- install插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+			</plugin>
+
+			<!-- deploy发布插件 -->
+			<!-- deploy -P release -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+				<!-- 更新元数据 <configuration> <updateReleaseInfo>true</updateReleaseInfo> 
+					</configuration> -->
+			</plugin>
+
+			<!-- dependency插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.0.2</version>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<!-- 用来支持项目发布到私服中,用来配合deploy插件的使用 -->
+	<distributionManagement>
+		<!-- 发布版本 -->
+		<repository>
+			<id>releases</id>
+			<name>public</name>
+			<url>file:E:/Workspaces/Release/maven/repository</url>
+			<!-- <url>http://10.200.11.21:8081/nexus/content/repositories/releases/</url> -->
+		</repository>
+		<!-- 快照版本 -->
+		<!-- <snapshotRepository> <id>snapshots</id> <name>Snapshots</name> <url>http://10.200.11.21:8081/nexus/content/repositories/snapshots</url> 
+			</snapshotRepository> -->
+	</distributionManagement>
+
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>XiaHui</name>
+			<email>onlyxiahui@163.com</email>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:https://gitee.com/onlysoftware/oim-fx.git</connection>
+		<developerConnection>scm:https://gitee.com/onlysoftware/oim-fx.git</developerConnection>
+		<url>https://gitee.com/onlysoftware/oim-fx</url>
+	</scm>
+</project>

@@ -1,0 +1,22 @@
+.button {
+    -fx-background-color:#be9861;
+    -fx-background-radius: 0;
+    -fx-font-family: "微软雅黑";
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 12;
+}
+
+.button:focused{
+    -fx-background-color:#795828;
+    -fx-background-radius: 0;
+}
+
+.button:hover {
+    -fx-background-color:#b2823d;
+    -fx-background-radius: 0;
+}
+
+.button:pressed {
+    -fx-background-color:#946829;
+    -fx-background-radius: 0;
+}

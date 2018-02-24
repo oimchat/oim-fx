@@ -1,0 +1,338 @@
+/******************************************************************************
+ *                                                                            *
+ * WindowButton                                                               *
+ *                                                                            *
+ ******************************************************************************/
+.only-title-button-pane {
+    -fx-padding:20 15 0 0;
+}
+
+/**最小化**/
+.window-min {
+    -fx-background-color:null;
+    -fx-background-radius: 0.0;
+}
+
+.window-min > .image-view{
+    -fx-image:url("../images/common/window/window_min_normal.png");
+}
+
+.window-min:focused > .image-view{
+    -fx-image:url("../images/common/window/window_min_normal.png");
+}
+
+.window-min:hover > .image-view{
+    -fx-image:url("../images/common/window/window_min_rollover.png");
+}
+
+.window-min:pressed > .image-view{
+    -fx-image:url("../images/common/window/window_min_pressed.png");
+}
+
+/**最大化**/
+.window-max {
+    -fx-background-color:null;
+    -fx-background-radius: 0.0;
+}
+
+.window-max > .image-view {
+    -fx-image:url("../images/common/window/window_max_normal.png");
+}
+
+.window-max:focused > .image-view {
+    -fx-image:url("../images/common/window/window_max_normal.png");
+}
+
+.window-max:hover > .image-view {
+    -fx-image:url("../images/common/window/window_max_rollover.png");
+}
+
+.window-max:pressed > .image-view {
+    -fx-image:url("../images/common/window/window_max_pressed.png");
+}
+
+/**还原**/
+.window-restore {
+    -fx-background-color:null;
+    -fx-background-radius: 0.0;
+}
+
+.window-restore > .image-view {
+    -fx-image:url("../images/common/window/window_restore_normal.png");
+}
+
+.window-restore:focused > .image-view {
+    -fx-image:url("../images/common/window/window_restore_normal.png");
+}
+
+.window-restore:hover > .image-view {
+    -fx-image:url("../images/common/window/window_restore_rollover.png");
+}
+
+.window-restore:pressed > .image-view {
+    -fx-image:url("../images/common/window/window_restore_pressed.png");
+}
+
+/**关闭 */
+.window-close {
+    -fx-background-color:null;
+    -fx-background-radius: 0.0;
+}
+
+.window-close > .image-view {
+    -fx-image:url("../images/common/window/window_close_normal.png");
+}
+
+.window-close:focused > .image-view {
+    -fx-image:url("../images/common/window/window_close_normal.png");
+}
+
+.window-close:hover > .image-view {
+    -fx-image:url("../images/common/window/window_close_rollover.png");
+}
+
+.window-close:pressed > .image-view {
+    -fx-image:url("../images/common/window/window_close_pressed.png");
+}
+
+
+
+
+
+.button {
+    -fx-background-color:#be9861;
+    -fx-background-radius: 0;
+    -fx-font-family: "微软雅黑";
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 12;
+}
+
+.button:focused{
+    -fx-background-color:#795828;
+    -fx-background-radius: 0;
+}
+
+.button:hover {
+    -fx-background-color:#b2823d;
+    -fx-background-radius: 0;
+}
+
+.button:pressed {
+    -fx-background-color:#946829;
+    -fx-background-radius: 0;
+}
+
+
+
+/*******************************************************************************
+ *                                                                             *
+ * ScrollBar                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+ 
+
+.scroll-pane >.scroll-bar > .thumb{
+    -fx-background-color: #cdcdcd;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.scroll-pane >.scroll-bar > .thumb:hover{
+    -fx-background-color: rgba(90.0,90.0,90.0,0.8);
+}
+
+.scroll-pane >.scroll-bar > .thumb:pressed{
+    -fx-background-color: rgba(70.0,70.0,70.0,0.8);
+}
+
+/*****/
+.scroll-pane > .scroll-bar:horizontal {
+    -fx-background-color: null;
+   -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.scroll-pane > .scroll-bar:horizontal:hover {
+    -fx-background-color: rgba(250.0,250.0,250.0,0.6);
+   -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.scroll-pane > .scroll-bar:horizontal:pressed {
+    -fx-background-color: rgba(220.0,220.0,220.0,0.6);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.scroll-pane > .scroll-bar:horizontal:focused {
+    -fx-background-color: rgba(230.0,230.0,230.0,0.6);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+
+/**
+.scroll-pane > .scroll-bar:horizontal > .increment-button,
+.scroll-pane > .scroll-bar:horizontal > .decrement-button {
+    -fx-padding: 0.166667em 0.25em 0.25em  0.25em; 
+    -fx-background-color: rgba(1.0,1.0,1.0,0.1);
+}*****//** 2 3 3 3 **/
+
+
+/*****/
+.scroll-pane > .scroll-bar:vertical {
+    -fx-background-color: null;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border:null;
+}
+
+.scroll-pane > .scroll-bar:vertical:hover {
+    -fx-background-color: rgba(250.0,250.0,250.0,0.6);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.scroll-pane > .scroll-bar:vertical:pressed {
+    -fx-background-color: rgba(220.0,220.0,220.0,0.6);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.scroll-pane > .scroll-bar:vertical:focused {
+    -fx-background-color: rgba(230.0,230.0,230.0,0.6);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+/**
+ .scroll-pane > .scroll-bar:vertical > .increment-button,
+.scroll-pane > .scroll-bar:vertical > .decrement-button {
+    -fx-padding: 0.25em 0.25em 0.25em 0.166667em; 
+} 
+**//** 3 3 3 2 **/
+
+ 
+ 
+ 
+.scroll-bar .track {
+    -fx-background-color: null;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.scroll-bar .track-background {
+     -fx-background-color: null;
+    -fx-background-insets: 0;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+     
+    -fx-padding: 0.25em; /* 3 */
+}
+ 
+.scroll-bar .increment-button:hover, .scroll-bar .decrement-button:hover  {
+    -fx-background-color: #dadada;
+}
+ 
+.scroll-bar .increment-button:pressed, .scroll-bar .decrement-button:pressed {
+    -fx-background-color: #606060;
+}
+ 
+.scroll-bar:horizontal .increment-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.5em 0.333333em 0.0em 0.0em; /* 6 4 0 0 */
+    -fx-shape: "M7.626,12.876L4.251,8.751H7.14L11,12.876L7.14,17H4.251L7.626,12.876z";
+}
+ 
+.scroll-bar:vertical .increment-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.333333em 0.5em 0.0em 0.0em; /* 4 6 0 0 */
+    -fx-shape: "M8.124,13.625l4.125-3.375v2.889l-4.125,3.86L4,13.139V10.25L8.124,13.625z";
+}
+ 
+.scroll-bar .increment-button:pressed .increment-arrow {
+    -fx-background-color: white, white;
+}
+ 
+.scroll-bar:horizontal .decrement-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.5em 0.333333em 0.0em 0.0em; /* 6 4 0 0 */
+    -fx-shape: "M11,17H8.111l-3.86-4.124l3.86-4.125H11l-3.375,4.125L11,17z";
+}
+ 
+.scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.333333em 0.5em 0.0em 0.0em; /* 4 6 0 0 */
+    -fx-shape: "M4,17v-2.889l4.124-3.86l4.125,3.86V17l-4.125-3.375L4,17z";
+}
+ 
+.scroll-bar .decrement-button:pressed .decrement-arrow {
+    -fx-background-color: white, white;
+}
+ 
+.scroll-bar:disabled {
+    -fx-opacity: 0.4;
+}
+
+
+
+/*******************************************************************************
+ *                                                                             *
+ * WebView                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+ 
+.web-view >.scroll-bar > .thumb{
+    -fx-background-color: #cdcdcd;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.web-view >.scroll-bar > .thumb:hover{
+    -fx-background-color: rgba(90.0,90.0,90.0,0.8);
+}
+
+.web-view >.scroll-bar > .thumb:pressed{
+    -fx-background-color: rgba(70.0,70.0,70.0,0.8);
+}
+
+
+.list-head-item{
+    -fx-background-color: null;
+}
+
+.list-head-item:hover {
+    -fx-background-color: rgba(226.0,227.0,230.0,1.0);
+}
+.list-head-item:pressed {
+    -fx-background-color: rgba(236.0,238.0,239.0,1.0);
+}
+
+.list-head-item:focused {
+    -fx-background-color: rgba(236.0,238.0,239.0,1.0);
+}
+
+
