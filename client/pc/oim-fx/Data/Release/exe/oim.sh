@@ -1,1 +1,0 @@
-jre\bin\java -jar oim-fx.jar

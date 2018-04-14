@@ -1,0 +1,393 @@
+/******************************************************************************
+ *                                                                            *
+ * WindowButton                                                               *
+ *                                                                            *
+ ******************************************************************************/
+
+/**最小化**/
+.window-min {
+	-fx-background-color: null;
+	-fx-background-radius: 0.0;
+}
+
+.window-min>.image-view {
+	-fx-image: url("../images/common/window/window_min_dark_normal.png");
+}
+
+.window-min:focused>.image-view {
+	-fx-image: url("../images/common/window/window_min_dark_normal.png");
+}
+
+.window-min:hover>.image-view {
+	-fx-image: url("../images/common/window/window_min_dark_hover.png");
+}
+
+.window-min:pressed>.image-view {
+	-fx-image: url("../images/common/window/window_min_dark_press.png");
+}
+
+/**最大化**/
+.window-max {
+	-fx-background-color: null;
+	-fx-background-radius: 0.0;
+}
+
+.window-max>.image-view {
+	-fx-image: url("../images/common/window/window_max_dark_normal.png");
+}
+
+.window-max:focused>.image-view {
+	-fx-image: url("../images/common/window/window_max_dark_normal.png");
+}
+
+.window-max:hover>.image-view {
+	-fx-image: url("../images/common/window/window_max_dark_hover.png");
+}
+
+.window-max:pressed>.image-view {
+	-fx-image: url("../images/common/window/window_max_dark_press.png");
+}
+
+/**还原**/
+.window-restore {
+	-fx-background-color: null;
+	-fx-background-radius: 0.0;
+}
+
+.window-restore>.image-view {
+	-fx-image: url("../images/common/window/window_restore_dark_normal.png");
+}
+
+.window-restore:focused>.image-view {
+	-fx-image: url("../images/common/window/window_restore_dark_normal.png");
+}
+
+.window-restore:hover>.image-view {
+	-fx-image: url("../images/common/window/window_restore_dark_hover.png");
+}
+
+.window-restore:pressed>.image-view {
+	-fx-image: url("../images/common/window/window_restore_dark_press.png");
+}
+
+/**关闭 */
+.window-close {
+	-fx-background-color: null;
+	-fx-background-radius: 0.0;
+}
+
+.window-close>.image-view {
+	-fx-image: url("../images/common/window/window_close_dark_normal.png");
+}
+
+.window-close:focused>.image-view {
+	-fx-image: url("../images/common/window/window_close_dark_normal.png");
+}
+
+.window-close:hover>.image-view {
+	-fx-image: url("../images/common/window/window_close_dark_hover.png");
+}
+
+.window-close:pressed>.image-view {
+	-fx-image: url("../images/common/window/window_close_dark_press.png");
+}
+
+/******************************************************************************
+ *                                                                            *
+ * Label                                                                      *
+ *                                                                            *
+ ******************************************************************************/
+.label {
+	-fx-font-family: "微软雅黑";
+	-fx-text-fill: black;
+}
+
+/******************************************************************************
+ *                                                                            *
+ * Button                                                                     *
+ *                                                                            *
+ ******************************************************************************/
+.button {
+	-fx-background-color: #38b9f4;
+	-fx-background-radius: 3;
+	-fx-font-family: "微软雅黑";
+	-fx-text-fill: white;
+	-fx-font-size: 12;
+}
+
+.button:focused {
+	-fx-background-color: rgba(197, 76, 95, 1);
+	-fx-background-radius: 3;
+}
+
+.button:hover {
+	-fx-background-color: rgba(16, 136, 184, 1);
+	-fx-background-radius: 3;
+}
+
+.button:pressed {
+	-fx-background-color: rgba(120, 120, 120, 1);
+	-fx-background-radius: 3;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ToggleButton                                                                *
+ *                                                                             *
+ ******************************************************************************/
+.toggle-button {
+	-fx-background-color: #38b9f4;
+	-fx-background-radius: 0;
+	-fx-text-fill: white;
+	-fx-background-radius: 3;
+}
+
+.toggle-button:hover {
+	-fx-background-radius: 3;
+}
+
+.toggle-button:focused {
+	-fx-background-radius: 3;
+}
+
+.toggle-button:disabled {
+	-fx-background-radius: 3;
+}
+
+.toggle-button:pressed {
+	-fx-background-radius: 3;
+}
+
+.toggle-button:selected {
+	-fx-background-radius: 3;
+}
+
+.toggle-button:selected:focused {
+	-fx-background-radius: 3;
+}
+
+/******************************************************************************
+ *                                                                            *
+ * TextField                                                                  *
+ *                                                                            *
+ ******************************************************************************/
+.text-field {
+	-fx-background-radius: 3;
+	-fx-border-color: null;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+}
+
+.text-field:focused {
+	-fx-background-radius: 3;
+	-fx-border-color: #4e8fe2;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+}
+
+.text-field:hover {
+	-fx-background-radius: 3;
+	-fx-border-color: #47c6f9;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+}
+
+.text-field:disabled {
+	-fx-background-radius: 3;
+	-fx-border-color: #ced3d8;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+}
+
+/******************************/
+.separator {
+	/*-fx-background-color:null;*/
+	-fx-background-insets: 1, 0 0 0 0;
+}
+
+.separator>.line {
+	-fx-background-color: null;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Slider                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+.slider .thumb {
+	-fx-background-color: #38b9f4;
+	-fx-background-insets: 0, 1, 2;
+	-fx-background-radius: 1.0em; /* makes sure this remains circular */
+	-fx-padding: 0.583333em; /* 7 */
+	-fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.1), 5, 0.0, 0, 2);
+}
+
+.slider:focused .thumb {
+	-fx-background-radius: 1.0em; /* makes sure this remains circular */
+}
+
+.slider .track {
+	-fx-background-color: rgba(187, 187, 187, 1);
+	-fx-background-insets: 0 0 -1 0, 0, 1;
+	-fx-background-radius: 0.25em, 0.25em, 0.166667em; /* 3 3 2 */
+	-fx-padding: 0.25em; /* 3 */
+}
+
+.slider:vertical .track {
+	-fx-background-color: rgba(187, 187, 187, 1);
+}
+
+.slider .axis {
+	-fx-tick-label-fill: derive(-fx-text-background-color, 30%);
+	-fx-tick-length: 5px;
+	-fx-minor-tick-length: 3px;
+	-fx-border-color: null;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ListView                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+.list-view {
+	-fx-background-color: rgba(195, 195, 195, 1), rgba(255, 255, 255, 0.8);
+	-fx-background-insets: 0, 1;
+	-fx-padding: 1;
+}
+
+.list-cell {
+	-fx-background: rgba(255, 255, 255, 0.5);
+}
+
+.list-view:focused>.virtual-flow>.clipped-container>.sheet>.list-cell:filled:selected
+	{
+	-fx-background: rgba(155, 155, 155, 0.5);
+	-fx-table-cell-border-color: null;
+	/**-fx-table-cell-border-color: derive(-fx-selection-bar, 20%);**/
+}
+
+/******************************************************************************
+ *                                                                            *
+ * Menu                                                                       *
+ *                                                                            *
+ ******************************************************************************/
+.context-menu {
+	/*-fx-background-image:url( ../images/menu/menu_background.png);*/
+	/*-fx-background-color: #858686;*/
+	-fx-min-width: 140px;
+	-fx-padding: 8 0 8 0;
+	-fx-spacing: 3;
+	-fx-background-width: 25.0;
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.8);
+	-fx-background-radius: 3.0px;
+	-fx-background-insets: 0.0 0.0 0.0 0.0;
+}
+
+.menu-item {
+	
+}
+
+.menu-item:hover {
+	-fx-background-color: rgba(160, 160, 160, 0.3);
+}
+
+.menu-item:pressed {
+	-fx-background-color: rgba(110, 110, 110, 0.3);
+}
+
+.menu-item:focused {
+	-fx-background-color: rgba(110, 110, 110, 0.3);
+}
+
+.menu-item:selected {
+	-fx-background-color: rgba(160, 160, 160, 0.3);
+}
+
+.separator-menu-item {
+	-fx-background-color: rgba(155.0, 155.0, 155.0, 0.8);
+}
+
+.separator-menu-item {
+	-fx-color: rgba(0, 0, 0, 0.5);
+	-fx-background-color: rgba(0, 0, 0, 0.8);
+}
+
+/******************************************************************************
+ *                                                                            *
+ * TabPane                                                                    *
+ *                                                                            *
+ ******************************************************************************/
+.tab-header-area {
+	-fx-padding: 0 0 0 0;
+}
+
+.tab-pane:top *.tab-header-area {
+	-fx-background-insets: 0, 0 0 0 0;
+	/* -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
+	-fx-padding: 0 0 0 0;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+	-fx-background-color: #ffffff;
+	-fx-border-color: white white #e1e1e1 white;
+	-fx-border-insets: 0;
+}
+
+.tab-pane {
+	-fx-tab-min-width: 90px;
+}
+
+.tab {
+	-fx-background-insets: 0 1 0 0, 0, 0;
+}
+
+.tab-pane .tab {
+	-fx-background-color: #e6e6e6;
+	-fx-background-radius: 0;
+}
+
+.tab-pane .tab:selected {
+	-fx-background-color: #299bb4;
+}
+
+.tab .tab-label {
+	-fx-alignment: CENTER;
+	-fx-text-fill: #828282;
+	-fx-font-size: 12px;
+	-fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+	-fx-alignment: CENTER;
+	-fx-text-fill: #ffffff;
+}
+
+/******************************************************************************
+ *                                                                            *
+ * WebView                                                                    *
+ *                                                                            *
+ ******************************************************************************/
+.web-view>.scroll-bar:horizontal {
+	-fx-background-color: rgba(250.0, 250.0, 250.0, 1);
+}
+
+.web-view>.scroll-bar:horizontal>.increment-button, .web-view>.scroll-bar:horizontal>.decrement-button
+	{
+	-fx-padding: 0.166667em 0.25em 0.25em 0.25em; /** 2 3 3 3 **/
+	-fx-background-color: rgba(1.0, 1.0, 1.0, 0.1);
+}
+
+.web-view>.scroll-bar:vertical {
+	-fx-background-color: rgba(250.0, 250.0, 250.0, 1);
+}
+
+.web-view>.scroll-bar:vertical>.increment-button, .web-view>.scroll-bar:vertical>.decrement-button
+	{
+	-fx-padding: 0.25em 0.25em 0.25em 0.166667em; /** 3 3 3 2 **/
+}
+
+/******************************************************************************
+ *                                                                            *
+ * OnlyPopupOver                                                            *
+ *                                                                            *
+ ******************************************************************************/

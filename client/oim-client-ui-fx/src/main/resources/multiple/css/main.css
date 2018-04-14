@@ -1,0 +1,370 @@
+/******************************************************************************
+ *                                                                            *
+ * WindowButton                                                               *
+ *                                                                            *
+ ******************************************************************************/
+.only-title-button-pane {
+    -fx-padding:0 0 0 0;
+}
+
+
+/******************************************************************************
+ *                                                                            *
+ * WindowButton                                                               *
+ *                                                                            *
+ ******************************************************************************/
+
+/**最小化**/
+.window-min {
+    -fx-background-color:null;
+    -fx-background-radius: 0.0;
+}
+
+.window-min > .image-view{
+    -fx-image:url("../images/common/window/window_min_normal.png");
+}
+
+.window-min:focused > .image-view{
+    -fx-image:url("../images/common/window/window_min_normal.png");
+}
+
+.window-min:hover > .image-view{
+    -fx-image:url("../images/common/window/window_min_hover.png");
+}
+
+.window-min:pressed > .image-view{
+    -fx-image:url("../images/common/window/window_min_press.png");
+}
+
+/**最大化**/
+.window-max {
+    -fx-background-color:null;
+    -fx-background-radius: 0.0;
+}
+
+.window-max > .image-view {
+    -fx-image:url("../images/common/window/window_max_normal.png");
+}
+
+.window-max:focused > .image-view {
+    -fx-image:url("../images/common/window/window_max_normal.png");
+}
+
+.window-max:hover > .image-view {
+    -fx-image:url("../images/common/window/window_max_hover.png");
+}
+
+.window-max:pressed > .image-view {
+    -fx-image:url("../images/common/window/window_max_press.png");
+}
+
+/**还原**/
+.window-restore {
+    -fx-background-color:null;
+    -fx-background-radius: 0.0;
+}
+
+.window-restore > .image-view {
+    -fx-image:url("../images/common/window/window_restore_normal.png");
+}
+
+.window-restore:focused > .image-view {
+    -fx-image:url("../images/common/window/window_restore_normal.png");
+}
+
+.window-restore:hover > .image-view {
+    -fx-image:url("../images/common/window/window_restore_hover.png");
+}
+
+.window-restore:pressed > .image-view {
+    -fx-image:url("../images/common/window/window_restore_press.png");
+}
+
+/**关闭 */
+.window-close {
+    -fx-background-color:null;
+    -fx-background-radius: 0.0;
+}
+
+.window-close > .image-view {
+    -fx-image:url("../images/common/window/window_close_normal.png");
+}
+
+.window-close:focused > .image-view {
+    -fx-image:url("../images/common/window/window_close_normal.png");
+}
+
+.window-close:hover > .image-view {
+    -fx-image:url("../images/common/window/window_close_hover.png");
+}
+
+.window-close:pressed > .image-view {
+    -fx-image:url("../images/common/window/window_close_press.png");
+}
+
+
+
+
+
+/******************************************************************************
+ *                                                                            *
+ *personal-menu-button                                                        *
+ *                                                                            *
+ ******************************************************************************/
+
+.personal-menu-button > .image-view {
+    -fx-image:url("../images/main/personal/options.png");
+}
+
+.personal-menu-button:focused > .image-view {
+    -fx-image:url("../images/main/personal/options.png");
+}
+
+.personal-menu-button:hover > .image-view {
+    -fx-image:url("../images/main/personal/options_restore.png");
+}
+
+.personal-menu-button:pressed > .image-view {
+    -fx-image:url("../images/main/personal/options_restore.png");
+}
+
+
+
+/******************************************************************************
+ *                                                                            *
+ *chat-item-pane                                                              *
+ *                                                                            *
+ ******************************************************************************/
+
+.choose-pane{
+    -fx-background-color: null;
+}
+
+.choose-pane:hover {
+    -fx-background-color: rgba(160,160,160,0.3);
+}
+
+.choose-pane:pressed {
+    -fx-background-color: rgba(110,110,110,0.3);
+}
+
+.choose-pane:focused {
+    -fx-background-color: rgba(110,110,110,0.3);
+}
+
+.choose-pane:selected {
+    -fx-background-color: rgba(160,160,160,0.3);
+}
+
+.selected-button:selected:focused {
+    -fx-background-color: rgba(160,160,160,0.3);
+}
+
+
+/******************************************************************************
+ *                                                                            *
+ *button                                                               *
+ *                                                                            *
+ ******************************************************************************/
+
+
+.button {
+    -fx-background-color:#36ac48;
+    -fx-background-radius: 3;
+    -fx-font-family: "微软雅黑";
+    -fx-text-fill: white;
+    -fx-font-size: 12;
+}
+
+.button:focused{
+    -fx-background-color: rgba(51, 154, 69, 1);
+    -fx-background-radius: 3;
+}
+
+.button:hover {
+    -fx-background-color: rgba(54, 190, 77, 1);
+    -fx-background-radius: 3;
+}
+
+.button:pressed {
+    -fx-background-color:rgba(136, 236, 154, 1);
+    -fx-background-radius: 3;
+}
+
+
+/******************************************************************************
+ *                                                                            *
+ *settingButton                                                               *
+ *                                                                            *
+ ******************************************************************************/
+
+.setting-button>.image-view {
+	-fx-image:url("../images/login/btn_set_normal.png");
+}
+
+.setting-button:focused>.image-view {
+	-fx-image:url("../images/login/btn_set_normal.png");
+}
+
+.setting-button:hover>.image-view {
+	-fx-image:url("../images/login/btn_set_hover.png");
+}
+
+.setting-button:pressed >.image-view {
+	-fx-image:url("../images/login/btn_set_press.png");
+}
+
+
+/**************************************
+*input
+***************************************/
+.empty-text-input-field {
+	-fx-background-color: null;
+	-fx-border-color: null;
+}
+
+.empty-text-input-field:editable {
+	-fx-background-color: null;
+	-fx-border-color: null;
+}
+
+.empty-text-input-field:focused {
+	-fx-background-color: null;
+	-fx-border-color: null;
+}
+
+.empty-text-input-field:hover {
+	-fx-background-color: null;
+	-fx-border-color: null;
+}
+
+.empty-text-input-field:pressed {
+	-fx-background-color: null;
+	-fx-border-color: null;
+}
+
+/**
+ * 登录按钮
+ */
+.login-button {
+	-fx-background-color: #05bafb;
+	-fx-background-radius: 3;
+	-fx-font-family: "微软雅黑";
+	-fx-font-size: 16px;
+	-fx-text-fill: white;
+}
+
+.login-button:focused {
+	-fx-background-color: #05bafb;
+}
+
+.login-button:hover {
+	-fx-background-color: #1fc8fd;
+}
+
+.login-button:pressed {
+	-fx-background-color: #05bafb;
+}
+
+.status-button {
+	-fx-border-color: null;
+}
+
+.status-button:hover {
+	-fx-border-color: #888888;
+	-fx-border-radius: 3;
+}
+
+.status-button:pressed {
+	-fx-border-color: #888888;
+	-fx-border-radius: 3;
+}
+
+/**************************************
+*account-button
+***************************************/
+.account-button>.image-view {
+	-fx-image: url("../images/login/login_inputbtn_normal.png");
+}
+
+.account-button:focused>.image-view {
+	-fx-image: url("../images/login/login_inputbtn_normal.png");
+}
+
+.account-button:hover>.image-view {
+	-fx-image: url("../images/login/login_inputbtn_highlight.png");
+}
+
+.account-button:pressed>.image-view {
+	-fx-image: url("../images/login/login_inputbtn_down.png");
+}
+
+
+/**************************************
+*password-button
+***************************************/
+.password-button>.image-view {
+	-fx-image: url("../images/login/keyboard_normal.png");
+}
+
+.password-button:focused>.image-view {
+	-fx-image: url("../images/login/keyboard_normal.png");
+}
+
+.password-button:hover>.image-view {
+	-fx-image: url("../images/login/keyboard_hover.png");
+}
+
+.password-button:pressed>.image-view {
+	-fx-image: url("../images/login/keyboard_down.png");
+}
+
+/**************************************
+*input-bottom
+***************************************/
+.input-bottom {
+	-fx-background-color: #b3b3b3;
+}
+
+.input-bottom:editable {
+	-fx-background-color: #05bafb;
+}
+
+.input-bottom:focused {
+	-fx-background-color: #05bafb;
+}
+
+.input-bottom:hover {
+	-fx-background-color: #05bafb;
+}
+
+.input-bottom:pressed {
+	-fx-background-color: #05bafb;
+}
+
+
+/******************************************************************************
+ * icon-button                                                                *
+ ******************************************************************************/
+.icon-button, .icon-menu-button, .icon-pane {
+	-fx-background-color: null;
+	-fx-background-radius: 1;
+	-fx-font-family: "微软雅黑";
+	-fx-text-fill: white;
+	-fx-font-size: 12;
+}
+
+.icon-button:focused, .icon-menu-button:focused, .icon-pane:focused {
+	-fx-background-color: rgba(153, 153, 153, 0.5);
+	-fx-background-radius: 1;
+}
+
+.icon-button:hover, .icon-menu-button:hover, .icon-pane:hover {
+	-fx-background-color: rgba(160, 160, 160, 0.5);
+	-fx-background-radius: 1;
+}
+
+.icon-button:pressed, .icon-menu-button:pressed, .icon-pane:pressed {
+	-fx-background-color: rgba(120, 120, 120, 0.5);
+	-fx-background-radius: 1;
+}

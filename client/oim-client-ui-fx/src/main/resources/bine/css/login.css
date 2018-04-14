@@ -1,0 +1,70 @@
+
+#setting-button{
+    -fx-background-image:url("../images/login/set_normal.png");
+    -fx-background-color:null;
+    -fx-background-radius: 0;
+}
+
+#setting-button:focused{
+    -fx-background-image:url("../images/login/set_normal.png");
+}
+
+#setting-button:hover {
+    -fx-background-image:url("../images/login/set_hover.png");
+}
+
+#setting-button:pressed {
+    -fx-background-image:url("../images/login/set_press.png");
+}
+
+/****************************************************
+ *  account 
+ * **************************************************
+ */
+
+.free-combo-box > .free-arrow-button > .image-view {
+    -fx-image:url("../../component/imagse/common/free_arrow_n.png");
+}
+
+.free-combo-box > .free-arrow-button:focused > .image-view {
+    -fx-image:url("../../component/imagse/common/free_arrow_n.png");
+}
+
+.free-combo-box > .free-arrow-button:hover > .image-view {
+    -fx-image:url("../../component/imagse/common/free_arrow_h.png");
+}
+
+.free-combo-box > .free-arrow-button:pressed > .image-view {
+    -fx-image:url("../../component/imagse/common/free_arrow_p.png");
+}
+
+
+/**********************************************************
+ * 
+ **********************************************************/
+.empty-text-input-field{
+    -fx-background-color: null;
+    -fx-border-color: null;
+    -fx-border: null;
+}
+
+.empty-text-input-field:editable {
+    -fx-background-color: null;
+    -fx-border-color: null;
+    -fx-border: null;
+}
+.empty-text-input-field:focused{
+    -fx-background-color: null;
+    -fx-border-color: null;
+    -fx-border: null;
+}
+.empty-text-input-field:hover {
+    -fx-background-color: null;
+    -fx-border-color: null;
+    -fx-border: null;
+}
+.empty-text-input-field:pressed {
+    -fx-background-color: null;
+    -fx-border-color: null;
+    -fx-border: null;
+}

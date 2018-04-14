@@ -1,0 +1,35 @@
+.context-menu {
+	/*-fx-background-image:url( ../images/menu/menu_background.png);*/
+	/*-fx-background-color: #858686;*/
+	-fx-min-width: 140px;
+	-fx-padding: 8 0 8 0;
+	-fx-spacing: 3;
+	-fx-background-width: 25.0;
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.8);
+	-fx-background-radius: 3.0px;
+	-fx-background-insets: 0.0 0.0 0.0 0.0;
+}
+
+.menu-item {
+	
+}
+
+.menu-item:hover {
+	-fx-background-color: rgba(160, 160, 160, 0.3);
+}
+
+.menu-item:pressed {
+	-fx-background-color: rgba(110, 110, 110, 0.3);
+}
+
+.menu-item:focused {
+	-fx-background-color: rgba(110, 110, 110, 0.3);
+}
+
+.menu-item:selected {
+	-fx-background-color: rgba(160, 160, 160, 0.3);
+}
+
+.separator-menu-item {
+	-fx-background-color: rgba(155.0, 155.0, 155.0, 0.8);
+}

@@ -1,1 +1,0 @@
-# oim-server-common
